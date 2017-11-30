@@ -8,6 +8,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { FeedPage } from '../pages/feed/feed';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +25,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     ProfilePage,
     FeedPage,
     TabsPage,
+    RegisterPage,
     LoginPage
   ],
   imports: [
@@ -40,6 +42,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     ProfilePage,
     FeedPage,
     TabsPage,
+    RegisterPage,
     LoginPage
   ],
   providers: [
