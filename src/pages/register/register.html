@@ -14,5 +14,17 @@
 
 
 <ion-content padding>
+  
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" [(ngModel)] = "user.emamil"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)] = "user.password"></ion-input>
+  </ion-item>
+  
+  <button ion-button (click) = "register(user)">Register</button>
 
 </ion-content>

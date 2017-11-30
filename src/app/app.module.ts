@@ -15,7 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2'; // LH added for add angularfire
 import { FIREBASE_CONFIG } from './firebase.credentials'; // LH added for add angularfire
 import { AngularFireDatabaseModule } from 'angularfire2/database'; // LH added for add angularfire
-
+import { AngularFireAuthModule } from "angularfire2/auth";
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'; // LH added f
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG), // LH added for add angularfire
     AngularFireDatabaseModule // LH added for add angularfire
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
