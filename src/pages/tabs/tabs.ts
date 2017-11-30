@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 
-import { FeedPage } from '../home/home';
-import { FeedPage } from '../about/about';
-import { AddPostPage } from '../contact/contact';
+import { FeedPage } from '../feed/feed';
+import { AddPostPage } from '../addpost/addpost';
+import { ProfilePage } from '../profile/profile';
 
 
 @Component({
