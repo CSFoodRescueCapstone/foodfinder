@@ -32,7 +32,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG), // LH added for add angularfire
-    AngularFireDatabaseModule // LH added for add angularfire
+    AngularFireDatabaseModule, // LH added for add angularfire
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
