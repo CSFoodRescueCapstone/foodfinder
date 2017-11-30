@@ -7,6 +7,7 @@ import { AddPostPage } from '../pages/addpost/addpost';
 import { ProfilePage } from '../pages/profile/profile';
 import { FeedPage } from '../pages/feed/feed';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'; // LH added f
     AddPostPage,
     ProfilePage,
     FeedPage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'; // LH added f
     AddPostPage,
     ProfilePage,
     FeedPage,
-    TabsPage
+    TabsPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
