@@ -1,0 +1,8 @@
+{
+  "name": "foodfinder",
+  "app_id": "94b20da7",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
