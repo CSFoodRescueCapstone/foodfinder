@@ -27,7 +27,7 @@ export class LoginPage {
   
   register() {
     console.log("register clicked");
-    this.navCtrl.push('RegisterPage');
+    this.navCtrl.push(RegisterPage);
   }
 
 }
