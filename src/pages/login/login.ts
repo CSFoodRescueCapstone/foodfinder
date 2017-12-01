@@ -40,6 +40,7 @@ export class LoginPage {
           console.error(error);
           //this.toast.show('Account does not exist', 5000);
       });
+      console.log('im here')
       
       //this.toast.show(result.toString(), 5000);
       //console.log(result);

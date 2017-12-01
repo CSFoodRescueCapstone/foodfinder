@@ -14,9 +14,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToastService } from '../services/toast.service';
 
-import { AngularFireModule } from 'angularfire2'; // LH added for add angularfire
-import { FIREBASE_CONFIG } from './firebase.credentials'; // LH added for add angularfire
-import { AngularFireDatabaseModule } from 'angularfire2/database'; // LH added for add angularfire
+import { AngularFireModule } from 'angularfire2';
+import { FIREBASE_CONFIG } from './firebase.credentials';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from "angularfire2/auth";
 
 @NgModule({
@@ -32,8 +32,8 @@ import { AngularFireAuthModule } from "angularfire2/auth";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(FIREBASE_CONFIG), // LH added for add angularfire
-    AngularFireDatabaseModule, // LH added for add angularfire
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
