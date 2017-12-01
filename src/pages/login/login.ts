@@ -29,9 +29,22 @@ export class LoginPage {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
       
+      this.toast.create({
+          message: result.toString(),
+          duration: 5000
+        }).present();
+      
       if(result) {
         this.navCtrl.push(TabsPage);
       }
+      
+      else {
+        this.toast.create({
+          message: 'Account does not exist',
+          duration: 5000
+        }).present();
+      }
+      
     }
     catch(e) {
       console.error(e);

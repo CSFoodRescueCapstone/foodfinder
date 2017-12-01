@@ -24,16 +24,24 @@ export class RegisterPage {
   }
   
   async register(user: User) {
-    try {
-      const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      console.log(result);
+    if(user.confirmpassword == user.password) {
+      try {
+        const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+        console.log(result);
       
-      if(result) {
-        this.navCtrl.push(LoginPage);
+        if(result) {
+          this.navCtrl.push(LoginPage);
+        }
+      }
+      catch(e) {
+        console.error(e);
       }
     }
-    catch(e) {
-      console.error(e);
+    else {
+       this.toast.create({
+          message: 'Account does not exist',
+          duration: 5000
+        }).present();
     }
   }
 
