@@ -12,7 +12,7 @@ import { RegisterPage } from '../pages/register/register';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ToastService } from '../services/toast.service'
+import { ToastService } from '../services/toast.service';
 
 import { AngularFireModule } from 'angularfire2'; // LH added for add angularfire
 import { FIREBASE_CONFIG } from './firebase.credentials'; // LH added for add angularfire
