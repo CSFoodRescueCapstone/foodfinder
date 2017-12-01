@@ -20,7 +20,7 @@ export class LoginPage {
   
   user = {} as User;
 
-  constructor(private afAuth AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   login(user: User) {
