@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from "angularfire2/auth";
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
@@ -21,7 +21,7 @@ export class LoginPage {
   
   user = {} as User;
 
-  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: ToastController, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   login(user: User) {

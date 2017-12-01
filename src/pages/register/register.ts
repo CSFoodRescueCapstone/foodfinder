@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth";
 import { LoginPage } from '../login/login';
@@ -20,7 +20,7 @@ export class RegisterPage {
   
   user = {} as User;
 
-  constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: ToastController, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
   
   async register(user: User) {
@@ -39,7 +39,7 @@ export class RegisterPage {
     }
     else {
        this.toast.create({
-          message: 'Account does not exist',
+          message: 'Passwords do not match',
           duration: 5000
         }).present();
     }
