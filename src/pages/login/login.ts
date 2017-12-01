@@ -35,7 +35,7 @@ export class LoginPage {
         this.navCtrl.push(TabsPage);
       }).catch(function(error) {
           console.error(error);
-          this.toast.show('Account does not exist', 5000);
+          //this.toast.show('Account does not exist', 5000);
       });
       
       //this.toast.show(result.toString(), 5000);
