@@ -17,9 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class LoginPage {
   
   user = {} as User;
-  var nc = this.navCtrl;
+  var nc;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    nc = this.navCtrl;
   }
 
   login() {
