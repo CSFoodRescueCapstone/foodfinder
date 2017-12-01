@@ -20,7 +20,7 @@ export class RegisterPage {
   
   user = {} as User;
 
-  constructor(private toast: ToastController, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
   
   async register(user: User) {
@@ -38,10 +38,7 @@ export class RegisterPage {
       }
     }
     else {
-       this.toast.create({
-          message: 'Passwords do not match',
-          duration: 5000
-        }).present();
+       this.toast.show('Passwords do not match', 5000);
     }
   }
 
