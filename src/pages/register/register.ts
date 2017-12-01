@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
-import { ToastService } from '../../services/toast.service';
+import { ToastService } from '../s../services/toast.service';
 
 import { AngularFireAuth } from "angularfire2/auth";
 import { LoginPage } from '../login/login';
@@ -29,9 +29,9 @@ export class RegisterPage {
     if(user.confirmpassword == user.password) {
       try {
         const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-        console.log(result);
+        console.log(result.uid);
       
-        if(result) {
+        if(result.uid) {
           this.navCtrl.push(LoginPage);
         }
       }

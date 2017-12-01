@@ -29,11 +29,11 @@ export class LoginPage {
   login(user: User) {
     try {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-      console.log(result);
       
-      this.toast.show(result.toString(), 5000);
+      //this.toast.show(result.toString(), 5000);
+      console.log(result.uid);
       
-      if(result) {
+      if(result.uid) {
         this.navCtrl.push(TabsPage);
       }
       
