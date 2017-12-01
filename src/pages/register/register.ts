@@ -29,9 +29,9 @@ export class RegisterPage {
     if(user.confirmpassword == user.password) {
       try {
         const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-        console.log(result.uid);
+        console.log(result);
       
-        if(result.uid) {
+        if(result) {
           this.navCtrl.push(LoginPage);
         }
       }

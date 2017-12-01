@@ -28,14 +28,21 @@ export class LoginPage {
 
   login(user: User) {
     try {
-      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      //const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(function(user1) {
+        console.log('uid',user1.uid);
+        
+        this.navCtrl.push(TabsPage);
+      }).catch(function(error) {
+          console.error(error);
+      });
       
       //this.toast.show(result.toString(), 5000);
-      console.log(result.uid);
+      //console.log(result);
       
-      if(result.uid) {
-        this.navCtrl.push(TabsPage);
-      }
+      // if(result) {
+      //   this.navCtrl.push(TabsPage);
+      // }
       
       else {
         this.toast.show('Account does not exist', 5000); 
