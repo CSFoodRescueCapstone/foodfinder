@@ -17,6 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class LoginPage {
   
   user = {} as User;
+  var nc = this.navCtrl;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -27,7 +28,7 @@ export class LoginPage {
   
   register() {
     console.log("register clicked");
-    this.navCtrl.push(RegisterPage);
+    nc.push('RegisterPage');
   }
 
 }
