@@ -3,6 +3,7 @@ import { User } from '../../models/user';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from "angularfire2/auth";
 import { RegisterPage } from '../register/register';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -24,11 +25,20 @@ export class LoginPage {
   }
 
   login(user: User) {
-    this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+    try {
+      const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      console.log(result);
+    }
+    catch(e) {
+      console.error(e);
+    }
+    
+    if(result){
+      this.navCtrl.push(TabsPage);
+    }
   }
   
   register() {
-    console.log("register clicked");
     this.navCtrl.push(RegisterPage);
   }
 
