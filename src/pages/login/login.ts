@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from "angularfire2/auth";
-import { ToastService } from '../services/toast.service';
+import { ToastService } from '../../services/toast.service';
 
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
