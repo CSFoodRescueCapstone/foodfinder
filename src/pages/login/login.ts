@@ -29,10 +29,13 @@ export class LoginPage {
   login(user: User) {
     try {
       //const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      var result = 0;
+      
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(function(user1) {
         console.log('uid',user1.uid);
         
-        this.navCtrl.push(TabsPage);
+        result = 1;
+        //this.navCtrl.push(TabsPage);
       }).catch(function(error) {
           console.error(error);
           //this.toast.show('Account does not exist', 5000);
@@ -41,13 +44,11 @@ export class LoginPage {
       //this.toast.show(result.toString(), 5000);
       //console.log(result);
       
-      // if(result) {
-      //   this.navCtrl.push(TabsPage);
-      // }
-      
-      // else {
-      //   this.toast.show('Account does not exist', 5000); 
-      // }
+      if(result == 1) {
+        this.navCtrl.push(TabsPage);
+      } else {
+        this.toast.show('Account does not exist', 5000); 
+      }
       
     }
     catch(e) {
