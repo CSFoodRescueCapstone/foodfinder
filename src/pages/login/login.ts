@@ -28,13 +28,13 @@ export class LoginPage {
     try {
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       console.log(result);
+      
+      if(result) {
+        this.navCtrl.push(TabsPage);
+      }
     }
     catch(e) {
       console.error(e);
-    }
-    
-    if(result){
-      this.navCtrl.push(TabsPage);
     }
   }
   
