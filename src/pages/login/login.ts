@@ -38,7 +38,7 @@ export class LoginPage {
         //badLogin();
       });
       
-      goodLogin();
+      this.navCtrl.push(TabsPage);
       
     }
     catch(e) {
