@@ -32,11 +32,14 @@ export class LoginPage {
       
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).then(function(user1) {
         console.log('uid',user1.uid);
-        goodLogin();
+        //goodLogin();
       }).catch(function(error) {
         console.log(error);
-        badLogin();
+        //badLogin();
       });
+      
+      goodLogin();
+      
     }
     catch(e) {
       console.error(e);
