@@ -34,8 +34,7 @@ export class LoginPage {
         console.log('uid',user1.uid);
         goodLogin();
       }).catch(function(error) {
-        console.error(error);
-        //this.toast.show('Account does not exist', 5000);
+        console.log(error);
         badLogin();
       });
     }
