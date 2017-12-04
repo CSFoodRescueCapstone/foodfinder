@@ -4,9 +4,9 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="header">
 
-  <ion-navbar class="header">
+  <ion-navbar>
     <ion-title>Login</ion-title>
   </ion-navbar>
 
@@ -15,17 +15,17 @@
 
 <ion-content padding class = "page">
   
-  <ion-item>
-    <ion-label floating>Email Address</ion-label>
+  <ion-item class="textbox">
+    <ion-label floating class="floatinglabel">Email Address</ion-label>
     <ion-input type="text" [(ngModel)] = "user.email"></ion-input>
   </ion-item>
   
-  <ion-item>
-    <ion-label floating>Password</ion-label>
+  <ion-item class="textbox">
+    <ion-label floating class="floatinglabel">Password</ion-label>
     <ion-input type="password" [(ngModel)] = "user.password"></ion-input>
   </ion-item>
   
-  <button ion-button (click) = "login(user)">Login</button>
-  <button ion-button color = "light" (click) = "register()">Register</button>
+  <button ion-button class="login" (click) = "login(user)">Login</button>
+  <button ion-button class="register" (click) = "register()">Register</button>
   
 </ion-content>

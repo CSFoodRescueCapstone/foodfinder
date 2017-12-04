@@ -1,11 +1,32 @@
 page-login {
     
     .header {
-        color: primary;
+        background: color($colors, primary);
     }
 
     .page {
-         background: primary;
+         background: color($colors, primary);
+    }
+    
+    .login {
+        background: color($colors, light);
+        color: black;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    
+    .register {
+        background: color($colors, dark);
+        margin-top: 20px;
+    }
+    
+    .textbox {
+        background: color($colors, primary);
+        color: white;
+    }
+    
+    .item-input .label-md {
+        color: white;
     }
 
 }
