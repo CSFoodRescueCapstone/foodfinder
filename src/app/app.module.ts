@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { AddPostPage } from '../pages/addpost/addpost';
 import { ProfilePage } from '../pages/profile/profile';
@@ -9,6 +10,7 @@ import { FeedPage } from '../pages/feed/feed';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { OldPostsPage } from '../pages/oldposts/oldposts';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,11 +29,13 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     FeedPage,
     TabsPage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    OldPostsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireDatabaseModule,
     AngularFireAuthModule
@@ -44,7 +48,8 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     FeedPage,
     TabsPage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    OldPostsPage
   ],
   providers: [
     StatusBar,

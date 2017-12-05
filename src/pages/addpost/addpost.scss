@@ -1,3 +1,20 @@
 page-addpost {
-
+    
+    .header {
+        text-align: center;
+    }
+    
+    .page {
+         background: white;
+    }
+    
+    .addpost {
+        background: color($colors, light);
+        color: black;
+        float: right;
+        margin-top: 20px;
+    }
+    
+    
+    
 }

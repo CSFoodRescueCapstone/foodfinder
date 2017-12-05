@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class = "header">
   <ion-navbar>
     <ion-title>
       Your Profile
@@ -7,11 +7,32 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  
+  <div id="profilebuttons">
+    
+    <br>
+    <br>
+    <br>
+    
+    <img src ="dog.jpg" width="180" height="180"><br>
+    <button ion-button small class = "changephoto" (click) = "changePhoto()">Change Profile Photo</button>
+    
+    <div id = "profiletext">
+      
+      <ion-label class = "username">*Username*</ion-label>
+      <ion-label class = "userpoints">Points: </ion-label>
+      
+    </div>
+    
+    <button ion-button class = "viewoldposts" (click) = "viewOldPosts()">View Your Old Posts</button><br>
+    
+   
+    <button ion-button class = "changepassword" (click) = "changePassword()">Change Password</button>
+    <button ion-button class = "changeusername" (click) = "changeUsername()">Change Username</button>
+ 
+  </div>
+  
+    <button ion-button class = "logout" (click) = "logout()">Logout</button>
+    <button ion-button class = "delete" (click) = "deleteAccount()">Delete Account</button>
+  
 </ion-content>

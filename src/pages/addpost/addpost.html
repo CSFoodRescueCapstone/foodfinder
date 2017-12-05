@@ -1,11 +1,23 @@
-<ion-header>
+<ion-header class = "header">
   <ion-navbar>
     <ion-title>
-      Add A Post
+      Post
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding class = "page">
+  
+  <ion-item class="textbox">
+    <ion-label floating>Location</ion-label>
+    <ion-input type="text" [(ngModel)] = "post.location"></ion-input>
+  </ion-item>
+  
+  <ion-item class="textbox">
+    <ion-label floating>Addtional Info</ion-label>
+    <ion-input type="text" rows="4" [(ngModel)] = "post.info"></ion-input>
+  </ion-item>
+  
+  <button ion-button class="addpost" (click) = "addPost(post)">Add</button>
+  
 </ion-content>

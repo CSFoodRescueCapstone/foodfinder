@@ -1,3 +1,64 @@
 page-profile {
+    
+   .header {
+       background: color($colors, primary);
+       text-align: center;
+   }
+   
+   #profilebuttons {
+       text-align: center;
+   }
+   
+   #profiletext {
+       color: goldenrod;
+   }
+   
+   .username {
+       font-size: 25px;
+   }
+   
+   .changephoto {
+       background: white;
+       border: 1px solid #4CAF50;
+       color: color($colors, primary);
+   }
+   
+   .viewoldposts {
+       background: white;
+       border: 1px solid #4CAF50;
+       color: color($colors, primary);
+   }
+   
+   .changepassword {
+       background: white;
+       border: 1px solid lightskyblue;
+       color: lightskyblue;
+       bottom: -50px;
+   }
+   
+   .changeusername {
+       background: white;
+       border: 1px solid lightskyblue;
+       color: lightskyblue;
+       bottom: -50px;
+   }
+    
+    .logout {
+        background: orange;
+        color: white;
+        position: absolute;
+        bottom: 60px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .delete {
+        background: color($colors, danger);
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: calc(100% - 20px);
+    }
 
 }
