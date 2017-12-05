@@ -25,7 +25,7 @@ export class LoginPage {
   user = {} as User;
 
   constructor(private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-  }
+  } // end constructor
 
   login(user: User) {
       const resultLogin = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
@@ -61,7 +61,7 @@ export class LoginPage {
   }
   
   badLogin() {
-    this.toast.show('Account does not exist', 5000);
+    this.toast.show('Please try again.', 1000);
   }
   
   wait(ms) {
@@ -70,6 +70,6 @@ export class LoginPage {
     while (now - start < ms) {
       now = Date.now();
     }
-  }
+  } // end wait
 
-}
+} // end class
