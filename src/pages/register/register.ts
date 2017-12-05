@@ -32,7 +32,7 @@ export class RegisterPage {
         console.log(result);
       
         if(result) {
-          this.navCtrl.setRoot(LoginPage); // changed from push to setRoot so there is no back button
+          this.navCtrl.push(LoginPage); // change to something else so there is no back button
         }
       }
       catch(e) {
