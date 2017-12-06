@@ -28,26 +28,30 @@ export class LoginPage {
   } // end constructor
 
   login(user: User) {
-      const resultLogin = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      //const resultLogin = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       
-      resultLogin.then(function(user1) {
-        console.log('uid', user1.uid);
-      }).catch(function(error) {
-        console.log(error);
-      });
-      
-      this.wait(5000);
-      
-      var fbuser = this.afAuth.auth.currentUser;
-      
-      if (fbuser) {
-        console.log('user: ', fbuser.uid);
-        
-        this.goodLogin(fbuser.uid);
-      } else {
+      this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+      .then((returnedUser) => {
+        console.log('uid', returnedUser.uid);
+        this.goodLogin(returnedUser.uid);
+      })
+      .catch((err) => {         
+        console.log('Error', err);
         this.badLogin();
-      }
+      })
   }
+      // this.wait(5000);
+      
+      // var fbuser = this.afAuth.auth.currentUser;
+      
+      // if (fbuser) {
+      //   console.log('user: ', fbuser.uid);
+        
+      //   this.goodLogin(fbuser.uid);
+      // } else {
+      //   this.badLogin();
+      // }
+  
   
   register() {
     this.navCtrl.push(RegisterPage);

@@ -32,8 +32,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     TabsPage,
     RegisterPage,
     LoginPage,
-    OldPostsPage,
-    Camera
+    OldPostsPage
   ],
   imports: [
     BrowserModule,
