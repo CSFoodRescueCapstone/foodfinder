@@ -40,18 +40,6 @@ export class LoginPage {
         this.badLogin();
       })
   }
-      // this.wait(5000);
-      
-      // var fbuser = this.afAuth.auth.currentUser;
-      
-      // if (fbuser) {
-      //   console.log('user: ', fbuser.uid);
-        
-      //   this.goodLogin(fbuser.uid);
-      // } else {
-      //   this.badLogin();
-      // }
-  
   
   register() {
     this.navCtrl.push(RegisterPage);

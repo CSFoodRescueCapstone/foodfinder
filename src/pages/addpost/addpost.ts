@@ -38,7 +38,7 @@ export class AddPostPage {
     });
   }
   
-  takePicture() {
+  takePhoto() {
     
     const options: CameraOptions = {
       quality: 100,
@@ -54,6 +54,10 @@ export class AddPostPage {
     }, (err) => {
     // Handle error
     });
+    
+  }
+  
+  addLibraryPhoto() {
     
   }
   
