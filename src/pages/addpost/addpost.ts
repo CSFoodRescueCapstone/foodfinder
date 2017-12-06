@@ -49,7 +49,7 @@ export class AddPostPage {
       correctOrientation: true
     }
     
-    savePhoto(options);
+    this.savePhoto(options);
   }
   
   addLibraryPhoto () {
@@ -63,7 +63,7 @@ export class AddPostPage {
       correctOrientation: true
     }
     
-    savePhoto(options);
+    this.savePhoto(options);
   }
     
   async savePhoto (options) {
