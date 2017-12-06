@@ -12,6 +12,9 @@
     <h3 class="location">{{post.location}}</h3>
   
     <p class="info">{{post.info}}</p>
+    
+    <button ion-button class="eaten" (click) = "allEaten(post)">Eaten</button>
+    <button ion-button class="thanks" (click) = "thankPost(post)">Thanks</button>
   
   </ion-card>
  

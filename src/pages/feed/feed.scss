@@ -30,5 +30,20 @@ page-feed {
         margin-top: 20px;
         margin-bottom: 10px;
     }
+    
+    .post .thanks {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, primary);
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .post .eaten {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, danger);
+        margin: 0;
+    }
 
 }

@@ -5,28 +5,40 @@ page-addpost {
     }
     
     .page {
+         margin: 0;
+         padding: 0;
          background: white;
     }
     
-    .addpost {
-        background: color($colors, light);
-        color: black;
-        float: right;
-        margin-top: 20px;
-    }
-    
-    .takephoto {
-        background: color($colors, light);
-        color: black;
-        float: right;
-        margin-top: 20px;
+    .textbox {
+        background: transparent;
+        width: calc(100% - 20px);
+        margin: 0;
     }
     
     .addlibraryphoto {
+        width: calc(50% - 22px);
         background: color($colors, light);
         color: black;
-        float: right;
-        margin-top: 20px;
+        // color: lightskyblue;
+        margin: 20px 6px 10px 15px;
+    }
+    
+    .takephoto {
+        width: calc(50% - 22px);
+        background: color($colors, light);
+        color: black;
+        // color: lightskyblue;
+        margin: 20px 10px 10px 6px;
+    }
+    
+    .addpost {
+        height: 45px;
+        background: color($colors, secondary);
+        color: white;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: calc(100% - 30px);
     }
 
 }
