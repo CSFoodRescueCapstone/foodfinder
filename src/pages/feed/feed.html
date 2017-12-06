@@ -6,17 +6,24 @@
 
 <ion-content padding>
 
-<ion-card>
-
-  <ion-card-header>
-    testuser
-  </ion-card-header>
-
-  <ion-card-content>
-    tutt science
-    pizza here!
-  </ion-card-content>
-
-</ion-card>
+  <!--<ion-card>-->
+  
+  <!--  <ion-card-header>-->
+  <!--    testuser-->
+  <!--  </ion-card-header>-->
+  
+  <!--  <ion-card-content>-->
+  <!--    tutt science-->
+  <!--    pizza here!-->
+  <!--  </ion-card-content>-->
+  
+  <!--</ion-card>-->
+  
+  <ion-list>
+    <ion-item *ngFor="let post of posts$ | async">
+      <h2>Location: {{post.location}}</h2>
+      <h3>Info: {{post.info}}</h3>
+    </ion-item>
+  </ion-list>
  
 </ion-content>
