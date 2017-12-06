@@ -4,26 +4,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="page">
 
-  <!--<ion-card>-->
+  <ion-card class="post" *ngFor="let post of posts$ | async">
   
-  <!--  <ion-card-header>-->
-  <!--    testuser-->
-  <!--  </ion-card-header>-->
+    <h3 class="username">usernamehere</h3>
+    <h3 class="location">{{post.location}}</h3>
   
-  <!--  <ion-card-content>-->
-  <!--    tutt science-->
-  <!--    pizza here!-->
-  <!--  </ion-card-content>-->
+    <p class="info">{{post.info}}</p>
   
-  <!--</ion-card>-->
-  
-  <ion-list>
-    <ion-item *ngFor="let post of posts$ | async">
-      <h2>Location: {{post.location}}</h2>
-      <h3>Info: {{post.info}}</h3>
-    </ion-item>
-  </ion-list>
+  </ion-card>
  
 </ion-content>

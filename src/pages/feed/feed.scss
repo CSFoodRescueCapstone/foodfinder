@@ -4,9 +4,31 @@ page-feed {
         text-align: center;
     }
     
-    .text {
-        text-align: center;
-        color: LightGrey;
+    .page {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .post {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+    }
+    
+    .post h3.username {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    
+    .post h3.location {
+        font-size: 14px;
+    }
+    
+    .post p.info {
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
 }

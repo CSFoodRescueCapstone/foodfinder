@@ -16,6 +16,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToastService } from '../services/toast.service';
 
+import { Camera } from '@ionic-native/camera';
+
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -30,7 +32,8 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     TabsPage,
     RegisterPage,
     LoginPage,
-    OldPostsPage
+    OldPostsPage,
+    Camera
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ToastService,
+    Camera
   ]
 })
 export class AppModule {}

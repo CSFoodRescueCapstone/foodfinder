@@ -31,12 +31,12 @@ export class LoginPage {
       const resultLogin = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       
       resultLogin.then(function(user1) {
-        //console.log('uid', user1.uid);
+        console.log('uid', user1.uid);
       }).catch(function(error) {
-        //console.log(error);
+        console.log(error);
       });
       
-      this.wait(3000);
+      this.wait(5000);
       
       var fbuser = this.afAuth.auth.currentUser;
       
