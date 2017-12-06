@@ -15,7 +15,6 @@ import { OldPostsPage } from '../pages/oldposts/oldposts';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToastService } from '../services/toast.service';
-import { PostsService } from '../services/posts.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -57,7 +56,6 @@ import { AngularFireAuthModule } from "angularfire2/auth";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ToastService,
-    PostsService
   ]
 })
 export class AppModule {}
