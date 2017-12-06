@@ -7,23 +7,43 @@ page-login {
 
     .page {
          background: color($colors, primary);
+         margin: 0;
+         padding: 0;
+    }
+    
+    .titlebox {
+        width: 100%;
+        text-align: center;
+        margin-top: 30%;
+        margin-bottom: 50px;
+    }
+    
+    .title {
+        color: white;
+        font-size: 56px;
+    }
+    
+    .textbox {
+        background: transparent;
+        color: white;
+        width: calc(100% - 20px);
+        margin: 0;
+    }
+    
+    .register {
+        background: color($colors, secondary);
+        color: white;
+        width: calc(50% - 22px);
+        height: 45px;
+        margin: 30px 6px 10px 15px;
     }
     
     .login {
         background: color($colors, light);
         color: black;
-        margin-top: 20px;
-        margin-left: 15px;
-    }
-    
-    .register {
-        background: color($colors, dark);
-        margin-top: 20px;
-    }
-    
-    .textbox {
-        background: color($colors, primary);
-        color: white;
+        width: calc(50% - 22px);
+        height: 45px;
+        margin: 30px 10px 10px 6px;
     }
     
     .item-input .label-md {

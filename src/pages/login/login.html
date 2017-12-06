@@ -13,7 +13,11 @@
 </ion-header>
 
 
-<ion-content padding class = "page">
+<ion-content class="page">
+  
+  <div class="titlebox">
+    <h1 class="title">Food Finder</h1>
+  </div>
   
   <ion-item class="textbox">
     <ion-label floating>Email Address</ion-label>
@@ -25,7 +29,7 @@
     <ion-input type="password" [(ngModel)] = "user.password"></ion-input>
   </ion-item>
   
-  <button ion-button class="login" (click) = "login(user)">Login</button>
   <button ion-button class="register" (click) = "register()">Register</button>
+  <button ion-button class="login" (click) = "login(user)">Login</button>
   
 </ion-content>

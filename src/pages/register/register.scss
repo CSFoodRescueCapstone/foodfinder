@@ -4,12 +4,12 @@ page-register {
         text-align: center;
     }
     
-    .content {
+    .page {
         margin: 0;
         padding: 0;
     }
     
-    .formbox {
+    .textbox {
         width: calc(100% - 20px);
         margin: 0;
     }
@@ -19,6 +19,10 @@ page-register {
         height: 50px;
         margin-top: 30px;
         margin-left: 15px;
+    }
+    
+    .item-input .label-md {
+        color: color($colors, secondary);
     }
 
 }
