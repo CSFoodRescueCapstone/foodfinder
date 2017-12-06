@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from "angularfire2/database";
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { storage } from 'firebase';
 
 @Component({
   selector: 'page-addpost',
@@ -45,16 +46,10 @@ export class AddPostPage {
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true
     }
     
-    this.camera.getPicture(options).then((imageData) => {
-    // imageData is either a base64 encoded string or a file URI
-    // If it's base64:
-    let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-    // Handle error
-    });
-    
+    savePhoto(options);
   }
   
   addLibraryPhoto () {
@@ -64,16 +59,20 @@ export class AddPostPage {
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      sourceType: 0
+      sourceType: 0,
+      correctOrientation: true
     }
     
-    this.camera.getPicture(options).then((imageData) => {
-    // imageData is either a base64 encoded string or a file URI
-    // If it's base64:
-    let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-    // Handle error
-    });
+    savePhoto(options);
+  }
+    
+  async savePhoto (options) {
+    
+    const result = await this.camera.getPicture(options);
+    const image = 'data:image/jpeg;base64,${result}';
+    
+    const pictures = storage().ref('pictures/myPhoto');
+    pictures.putString(image, 'data_url');
     
   }
   
