@@ -72,9 +72,9 @@ export class AddPostPage {
     const result = await this.camera.getPicture(options);
     const image = 'data:image/jpeg;base64,${result}';
     
-    this.toast.show(image.toString(), 1000);
+    //this.toast.show(image.toString(), 1000);
     
-    const pictures = storage().ref('pictures/myPhoto');
+    const pictures = af.storage().ref('pictures/myPhoto');
     
     this.toast.show(pictures.toString(), 1000);
     
