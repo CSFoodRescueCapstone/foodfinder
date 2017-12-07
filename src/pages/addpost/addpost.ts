@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from "angularfire2/database";
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ToastService } from '../../services/toast.service';
 import { storage } from 'firebase';
 
 @Component({
@@ -14,7 +15,7 @@ export class AddPostPage {
   
   post = {} as Post;
 
-  constructor(private af: AngularFireDatabase, private storage: Storage, public navCtrl: NavController, private camera: Camera) {
+  constructor(private af: AngularFireDatabase, private toast: ToastService, private storage: Storage, public navCtrl: NavController, private camera: Camera) {
 
   }
 
@@ -72,6 +73,9 @@ export class AddPostPage {
     const image = 'data:image/jpeg;base64,${result}';
     
     const pictures = storage().ref('pictures/myPhoto');
+    
+    this.toast.show(pictures, 1000);
+    
     pictures.putString(image, 'data_url');
     
   }
