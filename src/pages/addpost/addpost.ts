@@ -5,7 +5,8 @@ import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from "angularfire2/database";
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ToastService } from '../../services/toast.service';
-import { storage } from 'firebase';
+// import { storage } from 'firebase';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-addpost',
@@ -74,7 +75,7 @@ export class AddPostPage {
     
     //this.toast.show(image.toString(), 1000);
     
-    const pictures = this.af.storage().ref('pictures/myPhoto');
+    const pictures = firebase.storage().ref('pictures/myPhoto');
     
     this.toast.show(pictures.toString(), 1000);
     
