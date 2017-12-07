@@ -11,6 +11,8 @@ export class FeedPage {
   posts$: Observable<any[]>;
 
   constructor(private af: AngularFireDatabase, public navCtrl: NavController) {
-    this.posts$ = this.af.list('/posts').valueChanges();
+    //this.posts$ = this.af.list('/posts').valueChanges();
+    
+    this.posts$ = this.af.list('/posts', ref => ref.orderByChild('time')).valueChanges();
   }
 }

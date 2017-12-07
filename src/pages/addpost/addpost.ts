@@ -5,6 +5,8 @@ import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from "angularfire2/database";
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ToastService } from '../../services/toast.service';
+import { TabsPage } from '../tabs/tabs';
+
 // import { storage } from 'firebase';
 import * as firebase from 'firebase';
 
@@ -22,22 +24,31 @@ export class AddPostPage {
 
   addPost(post: Post) {
     var uid = "";
+    var username = "";
     var location = post.location;
     var info = post.info;
     var photopath = "nopath";
     var d = new Date();
-    var time = d.getTime();
+    var time = d.getTime() * -1;
     
-    this.storage.get('uid').then((val) => {
-      uid = val;
+    this.storage.get('uid').then((val1) => {
+      uid = val1;
       
-      this.af.list("posts").push({ uid, time, location, info, photopath });
+      this.storage.get('username').then((val2) => {
+        username = val2;
+        console.log('username: ', username);
       
-      console.log('uid: ', uid);
-      console.log('time: ', time);
-      console.log('location: ', location);
-      console.log('info: ', info);
-      console.log('path: ', photopath);
+        this.af.list("posts").push({ uid, username, time, location, info, photopath });
+        
+        console.log('uid: ', uid);
+        console.log('username: ', username);
+        console.log('time: ', time);
+        console.log('location: ', location);
+        console.log('info: ', info);
+        console.log('path: ', photopath);
+        
+        this.navCtrl.parent.select(0);
+      });
     });
   }
   

@@ -51,6 +51,7 @@ export class RegisterPage {
   goodLogin(uid, username, name) {
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
+    this.storage.set('username', username);
     
     var photopath = "nophoto";
     var posts = [];

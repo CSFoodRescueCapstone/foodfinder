@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFirestore } from 'angularfire2/firestore';
 import { ToastService } from '../../services/toast.service';
 import { Storage } from '@ionic/storage';
 
@@ -23,8 +25,9 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage {
   
   user = {} as User;
+  // username: String;
 
-  constructor(private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private afs: AngularFirestore, private af: AngularFireDatabase, private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   } // end constructor
 
   login(user: User) {
@@ -32,7 +35,7 @@ export class LoginPage {
       
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       .then((returnedUser) => {
-        console.log('uid', returnedUser.uid);
+        //console.log('uid', returnedUser.uid);
         this.goodLogin(returnedUser.uid);
       })
       .catch((err) => {         
@@ -46,8 +49,13 @@ export class LoginPage {
   }
   
   goodLogin(uid) {
+    //this.username = this.af.list('/users', ref => ref.equalTo({ value: 'username', 'uid': uid }).valueChanges();
+    //var username = this.afs.collection('users', ref => ref.where('uid', '==', uid)).valueChanges();
+    //console.log(username);
+    
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
+    this.storage.set('username', 'username');
     
     this.navCtrl.push(TabsPage);
   }

@@ -1,6 +1,6 @@
 <ion-header class = "header">
   <ion-navbar>
-    <ion-title>Food Feed</ion-title>
+    <ion-title>Food</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -8,12 +8,12 @@
 
   <ion-card class="post" *ngFor="let post of posts$ | async">
   
-    <h3 class="username">usernamehere</h3>
+    <h3 class="username">{{post.username}}</h3>
     <h3 class="location">{{post.location}}</h3>
   
     <p class="info">{{post.info}}</p>
     
-    <button ion-button class="eaten" (click) = "allEaten(post)">Eaten</button>
+    <button ion-button class="gone" (click) = "allGone(post)">Gone</button>
     <button ion-button class="thanks" (click) = "thankPost(post)">Thanks</button>
   
   </ion-card>

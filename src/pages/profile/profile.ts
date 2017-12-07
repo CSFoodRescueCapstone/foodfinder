@@ -45,7 +45,8 @@ export class ProfilePage {
     });
     
     this.storage.set('loggedin', false);
-    this.storage.set('uid', '');
+    this.storage.set('uid', null);
+    this.storage.set('username', null);
     
      this.navCtrl.push(LoginPage);
      window.location.reload();
