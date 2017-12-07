@@ -74,7 +74,7 @@ export class AddPostPage {
     
     const pictures = storage().ref('pictures/myPhoto');
     
-    this.toast.show(pictures, 1000);
+    this.toast.show(pictures.toString(), 1000);
     
     pictures.putString(image, 'data_url');
     
