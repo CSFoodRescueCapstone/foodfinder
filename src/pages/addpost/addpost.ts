@@ -74,7 +74,7 @@ export class AddPostPage {
     
     //this.toast.show(image.toString(), 1000);
     
-    const pictures = af.storage().ref('pictures/myPhoto');
+    const pictures = this.af.storage().ref('pictures/myPhoto');
     
     this.toast.show(pictures.toString(), 1000);
     
