@@ -75,11 +75,11 @@ export class AddPostPage {
     
     //this.toast.show(image.toString(), 1000);
     
-    const pictures = firebase.storage().ref('pictures/myPhoto');
+    //const pictures = firebase.storage().ref('pictures/myPhoto');
     
-    this.toast.show(pictures.toString(), 1000);
+    //this.toast.show(pictures.toString(), 1000);
     
-    pictures.putString(image, 'data_url');
+    //pictures.putString(image, 'data_url');
     
   }
   
