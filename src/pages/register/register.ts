@@ -5,6 +5,7 @@ import { ToastService } from '../../services/toast.service';
 import { Storage } from '@ionic/storage';
 
 import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from "angularfire2/auth";
 import { LoginPage } from '../login/login';
 import { TabsPage } from '../tabs/tabs';
@@ -25,7 +26,7 @@ export class RegisterPage {
   
   user = {} as User;
 
-  constructor(private af: AngularFireDatabase, private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private afs: AngularFirestore, private af: AngularFireDatabase, private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   } // end constructor
   
   async register(user: User) {
@@ -52,11 +53,11 @@ export class RegisterPage {
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
     this.storage.set('username', username);
-    
-    var photopath = "nophoto";
     var posts = [];
     
-    this.af.list("users").push({ uid, name, username, photopath, posts });
+    //this.af.list("users").push({ uid, name, username, photopath, posts });
+    const users = this.afs.collection<User>('users');
+    users.add({ uid: uid, username: username, name: name, posts: posts});
     
     this.navCtrl.push(TabsPage);
   }

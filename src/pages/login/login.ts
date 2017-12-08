@@ -6,6 +6,7 @@ import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ToastService } from '../../services/toast.service';
 import { Storage } from '@ionic/storage';
+import { Observable } from 'rxjs/Observable';
 
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
@@ -52,6 +53,7 @@ export class LoginPage {
     //this.username = this.af.list('/users', ref => ref.equalTo({ value: 'username', 'uid': uid }).valueChanges();
     //var username = this.afs.collection('users', ref => ref.where('uid', '==', uid)).valueChanges();
     //console.log(username);
+    //this.getUser(uid);
     
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
@@ -64,12 +66,14 @@ export class LoginPage {
     this.toast.show('Please try again.', 1000);
   }
   
-  wait(ms) {
-    var start = Date.now(),
-        now = start;
-    while (now - start < ms) {
-      now = Date.now();
-    }
-  } // end wait
+  // getUser(uid: string){
+  //   let user: User;
+  //   let userKey = this.afs.collection<User>('users', ref => ref.where('uid', '==', uid)).ref.id;
+  //   let user$: Observable<User> = this.afs.collection<User>('users').doc(userKey).valueChanges() as Observable<User>;
+  //   let userSub: Subscription = user$.subscribe(data => {
+  //     user = data;
+  //   })
+  //   console.log(user);
+  // }
 
 } // end class
