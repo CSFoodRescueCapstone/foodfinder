@@ -40,10 +40,12 @@ page-feed {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 5px;
+        color: black;
     }
     
     h3.location {
-        font-size: 14px;
+        font-size: 15px;
+        color: color($colors, secondary);
     }
     
     .numbers {
@@ -64,12 +66,13 @@ page-feed {
         color: color($colors, danger);
         background: transparent;
         float: right;
-        padding-right: 5px;
+        padding-right: 10px;
     }
     
     p.info {
         margin-top: 20px;
         margin-bottom: 10px;
+        color: black;
     }
     
     .thanks {
