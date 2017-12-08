@@ -15,6 +15,7 @@ page-feed {
         margin: 0 auto;
         margin-top: 15px;
         padding: 10px;
+        position: relative;
     }
     
     .post h3.username {
@@ -27,6 +28,18 @@ page-feed {
         font-size: 14px;
     }
     
+    .post .numbers {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .post h3.numthanks {
+        font-size: 20px;
+        color: color($colors, primary);
+        background: transparent;
+    }
+    
     .post p.info {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -35,9 +48,21 @@ page-feed {
     .post .thanks {
         width: calc(50% - 7px);
         background: color($colors, light);
+        color: color($colors, secondary);
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .post .mythanks {
+        width: calc(50% - 7px);
+        background: color($colors, light);
         color: color($colors, primary);
         margin: 0;
         margin-left: 10px;
+    }
+    
+    .post .thanks.thanked {
+        color: color($colors, primary);
     }
     
     .post .gone {

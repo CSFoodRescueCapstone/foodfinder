@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Post } from '../../models/post';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFirestore } from 'angularfire2/firestore';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ToastService } from '../../services/toast.service';
 import { TabsPage } from '../tabs/tabs';
@@ -18,7 +18,7 @@ export class AddPostPage {
   
   post = {} as Post;
 
-  constructor(private af: AngularFireDatabase, private toast: ToastService, private storage: Storage, public navCtrl: NavController, private camera: Camera) {
+  constructor(private afs: AngularFirestore, private toast: ToastService, private storage: Storage, public navCtrl: NavController, private camera: Camera) {
 
   }
 
@@ -30,22 +30,36 @@ export class AddPostPage {
     var photopath = "nopath";
     var d = new Date();
     var time = d.getTime() * -1;
+    var thanks = [];
+    var numthanks = null;
     
     this.storage.get('uid').then((val1) => {
       uid = val1;
       
       this.storage.get('username').then((val2) => {
         username = val2;
-        console.log('username: ', username);
-      
-        this.af.list("posts").push({ uid, username, time, location, info, photopath });
         
-        console.log('uid: ', uid);
-        console.log('username: ', username);
-        console.log('time: ', time);
-        console.log('location: ', location);
-        console.log('info: ', info);
-        console.log('path: ', photopath);
+        const posts = this.afs.collection<Post>('posts');
+        var pid = this.afs.createId();
+        
+        posts.doc(pid).set({ pid: pid,
+                             uid: uid,
+                             username: username,
+                             location: location,
+                             info: info,
+                             photopath: photopath,
+                             time: time,
+                             thanks: thanks,
+                             numthanks: numthanks
+        });
+        
+        // console.log('pid: ', pid);
+        // console.log('uid: ', uid);
+        // console.log('username: ', username);
+        // console.log('location: ', location);
+        // console.log('info: ', info);
+        // console.log('path: ', photopath);
+        // console.log('time: ', time);
         
         this.navCtrl.parent.select(0);
       });

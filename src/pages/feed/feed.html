@@ -10,11 +10,17 @@
   
     <h3 class="username">{{post.username}}</h3>
     <h3 class="location">{{post.location}}</h3>
+    
+    <div class="numbers">
+      <h3 class="numthanks">{{post.numthanks}}</h3>
+    </div>
   
     <p class="info">{{post.info}}</p>
     
     <button ion-button class="gone" (click) = "allGone(post)">Gone</button>
-    <button ion-button class="thanks" (click) = "thankPost(post)">Thanks</button>
+    
+    <button ion-button *ngIf="post.thanks.indexOf(myuid) == -1" class="thanks" id={{post.pid}} (click) = "thankPost(post)">Thanks</button>
+    <button ion-button *ngIf="post.thanks.indexOf(myuid) !== -1" class="mythanks" id={{post.pid}} (click) = "thankPost(post)">Thanks</button>
   
   </ion-card>
  

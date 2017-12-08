@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
+import { DBUser } from '../../models/dbuser';
 import { ToastService } from '../../services/toast.service';
 import { Storage } from '@ionic/storage';
 
-import { AngularFireDatabase } from "angularfire2/database";
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from "angularfire2/auth";
-import { LoginPage } from '../login/login';
 import { TabsPage } from '../tabs/tabs';
 
 /**
@@ -26,7 +25,7 @@ export class RegisterPage {
   
   user = {} as User;
 
-  constructor(private afs: AngularFirestore, private af: AngularFireDatabase, private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private afs: AngularFirestore, private storage: Storage, private toast: ToastService, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   } // end constructor
   
   async register(user: User) {
@@ -49,15 +48,13 @@ export class RegisterPage {
     }
   }
   
-  goodLogin(uid, username, name) {
+  goodLogin(uid: string, username: string, name: string) {
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
     this.storage.set('username', username);
-    var posts = [];
     
-    //this.af.list("users").push({ uid, name, username, photopath, posts });
-    const users = this.afs.collection<User>('users');
-    users.add({ uid: uid, username: username, name: name, posts: posts});
+    const users = this.afs.collection<DBUser>('users');
+    users.add({ uid: uid, username: username, name: name});
     
     this.navCtrl.push(TabsPage);
   }
