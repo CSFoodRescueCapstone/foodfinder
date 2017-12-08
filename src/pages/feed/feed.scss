@@ -40,6 +40,12 @@ page-feed {
         background: transparent;
     }
     
+    .post h3.numgone {
+        font-size: 20px;
+        color: color($colors, primary);
+        background: transparent;
+    }
+    
     .post p.info {
         margin-top: 20px;
         margin-bottom: 10px;
@@ -53,6 +59,10 @@ page-feed {
         margin-left: 10px;
     }
     
+    .thanks:hover{
+        background-color: color($colors, light) !important;
+    }
+    
     .post .mythanks {
         width: calc(50% - 7px);
         background: color($colors, light);
@@ -61,15 +71,30 @@ page-feed {
         margin-left: 10px;
     }
     
-    .post .thanks.thanked {
-        color: color($colors, primary);
+    .mythanks:hover{
+        background-color: color($colors, light) !important;
     }
     
     .post .gone {
         width: calc(50% - 7px);
         background: color($colors, light);
+        color: color($colors, secondary);
+        margin: 0;
+    }
+    
+    .gone:hover{
+        background-color: color($colors, light) !important;
+    }
+    
+    .post .mygone {
+        width: calc(50% - 7px);
+        background: color($colors, light);
         color: color($colors, danger);
         margin: 0;
+    }
+    
+    .mygone:hover{
+        background-color: color($colors, light) !important;
     }
 
 }

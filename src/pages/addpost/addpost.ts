@@ -31,7 +31,9 @@ export class AddPostPage {
     var d = new Date();
     var time = d.getTime() * -1;
     var thanks = [];
-    var numthanks = null;
+    var numthanks = 0;
+    var gone = [];
+    var numgone = 0;
     
     this.storage.get('uid').then((val1) => {
       uid = val1;
@@ -50,7 +52,9 @@ export class AddPostPage {
                              photopath: photopath,
                              time: time,
                              thanks: thanks,
-                             numthanks: numthanks
+                             numthanks: numthanks,
+                             gone: gone,
+                             numgone: numgone
         });
         
         // console.log('pid: ', pid);
@@ -95,8 +99,8 @@ export class AddPostPage {
     
   async savePhoto (options) {
     
-    const result = await this.camera.getPicture(options);
-    const image = 'data:image/jpeg;base64,${result}';
+    // const result = await this.camera.getPicture(options);
+    // const image = 'data:image/jpeg;base64,${result}';
     
     //this.toast.show(image.toString(), 1000);
     

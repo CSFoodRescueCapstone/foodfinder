@@ -24,12 +24,20 @@ page-addpost {
         margin: 30px 6px 10px 15px;
     }
     
+    .addlibraryphoto:hover{
+        background-color: color($colors, light) !important;
+    }
+    
     .takephoto {
         width: calc(50% - 22px);
         background: color($colors, light);
         color: black;
         // color: lightskyblue;
         margin: 30px 10px 10px 6px;
+    }
+    
+    .takephoto:hover{
+        background-color: color($colors, light) !important;
     }
     
     .addpost {
@@ -39,6 +47,10 @@ page-addpost {
         margin-top: 15px;
         margin-left: 15px;
         width: calc(100% - 30px);
+    }
+    
+    .addpost:hover{
+        background-color: color($colors, secondary) !important;
     }
 
 }

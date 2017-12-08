@@ -40,12 +40,20 @@ page-login {
         margin: 55px 6px 10px 15px;
     }
     
+    .register:hover{
+        background-color: color($colors, light) !important;
+    }
+    
     .login {
         background: color($colors, primary);
         color: white;
         width: calc(50% - 22px);
         height: 45px;
         margin: 55px 10px 10px 6px;
+    }
+    
+    .login:hover{
+        background-color: color($colors, primary) !important;
     }
     
     .item-input .label-md {

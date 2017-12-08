@@ -51,4 +51,30 @@ export class FeedPage {
       this.postDoc.update(post);
     });
   }
+  
+  gonePost(post: Post) {
+    var uid = "";
+    
+    this.storage.get('uid').then((val) => {
+      uid = val;
+      this.myuid = uid;
+      
+      if (post.gone.indexOf(uid) < 0) {
+        post.gone.push(uid);
+      } else {
+        var index = post.gone.indexOf(uid);
+        post.gone.splice(index, 1);
+      }
+      
+      if (post.gone.length == 0) {
+        post.numgone = null;
+      } else {
+        post.numgone = post.gone.length;
+      }
+      
+      var postPath = 'posts/' + post.pid;
+      this.postDoc = this.afs.doc<Post>(postPath);
+      this.postDoc.update(post);
+    });
+  }
 }

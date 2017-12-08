@@ -46,18 +46,6 @@ export class LoginPage {
   }
   
   goodLogin(uid) {
-    // let userReference: AngularFirestoreCollection<{}> = this.afs.collection('users', ref => ref.where('uid', '==', uid));
-    // let user$: Observable<{}> = userReference.valueChanges();
-    // let userSubscription: Subscription = user$.subscribe(data => {
-    //   var username = data[0]["username"];
-      
-    //   this.storage.set('loggedin', true);
-    //   this.storage.set('uid', uid);
-    //   this.storage.set('username', username);
-    
-    //   this.navCtrl.push(TabsPage);
-    // })
-    
     let userRef = this.afs.collection('users').ref.where('uid', '==', uid);
     var username = "";
     

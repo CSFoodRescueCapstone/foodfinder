@@ -9,5 +9,7 @@ export interface Post {
     time: number;
     thanks: string[];
     numthanks: number;
+    gone: string[];
+    numgone: number;
     
 }

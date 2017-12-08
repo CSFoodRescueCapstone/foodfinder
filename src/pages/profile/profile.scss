@@ -46,6 +46,10 @@ page-profile {
         width: calc(100% - 20px);
     }
     
+    .logout:hover{
+        background-color: orange !important;
+    }
+    
     .delete {
         background: color($colors, danger);
         color: white;
