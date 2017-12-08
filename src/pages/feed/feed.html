@@ -9,7 +9,12 @@
   <!--<ion-card class="postred" *ngIf="post.numgone > 0" *ngFor="let post of posts$ | async">-->
   <ion-card class="post" *ngFor="let post of posts$ | async">
   
-    <h3 class="username">{{post.username}}</h3>
+    <div class="postheader">
+      <h3 class="username">{{post.username}}</h3>
+      <!--<h3 class="time">getTime({{post.time}})</h3>-->
+      <div class="clear"></div>
+    </div>
+    
     <h3 class="location">{{post.location}}</h3>
     
     <div class="numbers">

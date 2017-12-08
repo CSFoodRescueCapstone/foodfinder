@@ -77,4 +77,8 @@ export class FeedPage {
       this.postDoc.update(post);
     });
   }
+  
+  getTime(time: number) {
+    return Math.abs(time);
+  }
 }
