@@ -1,6 +1,6 @@
 export interface Post {
     
-    id: string;
+    pid: string;
     uid: string;
     username: string;
     location: string;
