@@ -10,6 +10,14 @@ page-feed {
         background: #fafafa;
     }
     
+    .post {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        position: relative;
+    }
+    
     .postgreen {
         width: calc(100% - 30px);
         margin: 0 auto;
