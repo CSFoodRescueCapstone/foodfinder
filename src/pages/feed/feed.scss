@@ -28,30 +28,30 @@ page-feed {
         box-shadow: 1px 1px 1px color($colors, danger);
     }
     
-    .post h3.username {
+    h3.username {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 5px;
     }
     
-    .post h3.location {
+    h3.location {
         font-size: 14px;
     }
     
-    .post .numbers {
+    .numbers {
         position: absolute;
         right: 15px;
         top: 10px;
     }
     
-    .post h3.numthanks {
+    h3.numthanks {
         font-size: 20px;
         color: color($colors, primary);
         background: transparent;
         float: right;
     }
     
-    .post h3.numgone {
+    h3.numgone {
         font-size: 20px;
         color: color($colors, danger);
         background: transparent;
@@ -59,12 +59,12 @@ page-feed {
         padding-right: 5px;
     }
     
-    .post p.info {
+    p.info {
         margin-top: 20px;
         margin-bottom: 10px;
     }
     
-    .post .thanks {
+    .thanks {
         width: calc(50% - 7px);
         background: color($colors, light);
         color: color($colors, secondary);
@@ -76,7 +76,7 @@ page-feed {
         background-color: color($colors, light) !important;
     }
     
-    .post .mythanks {
+    .mythanks {
         width: calc(50% - 7px);
         background: color($colors, light);
         color: color($colors, primary);
@@ -88,7 +88,7 @@ page-feed {
         background-color: color($colors, light) !important;
     }
     
-    .post .gone {
+    .gone {
         width: calc(50% - 7px);
         background: color($colors, light);
         color: color($colors, secondary);
@@ -99,7 +99,7 @@ page-feed {
         background-color: color($colors, light) !important;
     }
     
-    .post .mygone {
+    .mygone {
         width: calc(50% - 7px);
         background: color($colors, light);
         color: color($colors, danger);

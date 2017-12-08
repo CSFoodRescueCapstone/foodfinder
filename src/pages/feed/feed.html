@@ -6,25 +6,29 @@
 
 <ion-content class="page">
 
-  <!--<ion-card class="postred" *ngIf="post.numgone > 0" *ngFor="let post of posts$ | async">-->
-  <ion-card class="postgreen" *ngFor="let post of posts$ | async">
-  
-    <h3 class="username">{{post.username}}</h3>
-    <h3 class="location">{{post.location}}</h3>
+  <div class="forbox" *ngFor="let post of posts$ | async">
+
+    <ion-card class="postred" *ngIf="post.numgone > 0">
+    <ion-card class="postgreen" *ngIf="post.numgone == 0">
     
-    <div class="numbers">
-      <h3 class="numthanks">{{post.numthanks}}</h3>
-      <h3 class="numgone">{{post.numgone}}</h3>
-    </div>
-  
-    <p class="info">{{post.info}}</p>
+      <h3 class="username">{{post.username}}</h3>
+      <h3 class="location">{{post.location}}</h3>
+      
+      <div class="numbers">
+        <h3 class="numthanks">{{post.numthanks}}</h3>
+        <h3 class="numgone">{{post.numgone}}</h3>
+      </div>
     
-    <button ion-button *ngIf="post.gone.indexOf(myuid) == -1" class="gone" (click) = "gonePost(post)">Gone</button>
-    <button ion-button *ngIf="post.gone.indexOf(myuid) !== -1" class="mygone" (click) = "gonePost(post)">Gone</button>
+      <p class="info">{{post.info}}</p>
+      
+      <button ion-button *ngIf="post.gone.indexOf(myuid) == -1" class="gone" (click) = "gonePost(post)">Gone</button>
+      <button ion-button *ngIf="post.gone.indexOf(myuid) !== -1" class="mygone" (click) = "gonePost(post)">Gone</button>
+      
+      <button ion-button *ngIf="post.thanks.indexOf(myuid) == -1" class="thanks" (click) = "thankPost(post)">Thanks</button>
+      <button ion-button *ngIf="post.thanks.indexOf(myuid) !== -1" class="mythanks" (click) = "thankPost(post)">Thanks</button>
     
-    <button ion-button *ngIf="post.thanks.indexOf(myuid) == -1" class="thanks" (click) = "thankPost(post)">Thanks</button>
-    <button ion-button *ngIf="post.thanks.indexOf(myuid) !== -1" class="mythanks" (click) = "thankPost(post)">Thanks</button>
-  
-  </ion-card>
+    </ion-card>
+    
+  </div>
  
 </ion-content>
