@@ -10,12 +10,22 @@ page-feed {
         background: #fafafa;
     }
     
-    .post {
+    .postgreen {
         width: calc(100% - 30px);
         margin: 0 auto;
         margin-top: 15px;
         padding: 10px;
         position: relative;
+        box-shadow: 1px 1px 1px color($colors, primary);
+    }
+    
+    .postred {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        position: relative;
+        box-shadow: 1px 1px 1px color($colors, danger);
     }
     
     .post h3.username {
@@ -30,7 +40,7 @@ page-feed {
     
     .post .numbers {
         position: absolute;
-        right: 10px;
+        right: 15px;
         top: 10px;
     }
     
@@ -38,12 +48,15 @@ page-feed {
         font-size: 20px;
         color: color($colors, primary);
         background: transparent;
+        float: right;
     }
     
     .post h3.numgone {
         font-size: 20px;
-        color: color($colors, primary);
+        color: color($colors, danger);
         background: transparent;
+        float: right;
+        padding-right: 5px;
     }
     
     .post p.info {

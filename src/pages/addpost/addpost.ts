@@ -31,9 +31,9 @@ export class AddPostPage {
     var d = new Date();
     var time = d.getTime() * -1;
     var thanks = [];
-    var numthanks = 0;
+    var numthanks = null;
     var gone = [];
-    var numgone = 0;
+    var numgone = null;
     
     this.storage.get('uid').then((val1) => {
       uid = val1;
