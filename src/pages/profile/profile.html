@@ -10,19 +10,15 @@
   
   <div id="profilebuttons">
     
-    <br>
-    <br>
-    <br>
-    <div id = "profiletext">
+    <div id="profiletext">
       
-      <ion-label class = "username">*Name*</ion-label>
-      <ion-label class = "userpoints">Points: </ion-label>
+      <ion-label class="name">{{name}}</ion-label>
+      <ion-label class="username">{{username}}</ion-label>
       
     </div>
     
     <button ion-button class = "viewoldposts" (click) = "viewOldPosts()">View Your Old Posts</button><br>
     
-   
     <button ion-button class = "changepassword" (click) = "changePassword()">Change Password</button>
     <button ion-button class = "changeusername" (click) = "changeUsername()">Change Username</button>
  

@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { OldPostsPage } from '../oldposts/oldposts';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
 
@@ -13,10 +14,26 @@ import { Storage } from '@ionic/storage';
 
 export class ProfilePage {
   
-   user = {} as User;
+   name$: Observable<string>;
+   username$: Observable<string>;
 
-  constructor(private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+    
+    this.storage.get('uid').then((val) => {
+      var uid = val;
+      
+      let userRef = this.afs.collection('users').ref.where('uid', '==', uid);
+    
+      userRef.get().then((result) => {
+        result.forEach(doc => {
+          this.name$ = doc.data()['name'];
+          this.username$ = doc.data()['username'];
+        
+          
+        })
+      })
+    });
+    
   }
   
   changePhoto() { // method for the changePhoto button

@@ -52,14 +52,14 @@ export class LoginPage {
     userRef.get().then((result) => {
       result.forEach(doc => {
         username = doc.data()['username'];
+        
         this.storage.set('loggedin', true);
         this.storage.set('uid', uid);
         this.storage.set('username', username);
     
         this.navCtrl.push(TabsPage);
+      })
     })
-})
-    
   }
   
   badLogin() {
