@@ -7,6 +7,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ToastService } from '../../services/toast.service';
 import { TabsPage } from '../tabs/tabs';
 
+import { ImageProvider } from '../providers/image/image';
+
 // import { storage } from 'firebase';
 import * as firebase from 'firebase';
 
@@ -17,9 +19,13 @@ import * as firebase from 'firebase';
 export class AddPostPage {
   
   post = {} as Post;
+  private images = [];
+  private postId: string;
 
-  constructor(private afs: AngularFirestore, private toast: ToastService, private storage: Storage, public navCtrl: NavController, private camera: Camera) {
-
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore,
+              private toast: ToastService, private storage: Storage, public navCtrl: NavController,
+              private camera: Camera, private imageSrv: ImageProvider) {
+    postId = "";
   }
 
   addPost(post: Post) {
@@ -42,7 +48,8 @@ export class AddPostPage {
         username = val2;
         
         const posts = this.afs.collection<Post>('posts');
-        var pid = this.afs.createId();
+        // var pid = this.afs.createId();
+        var pid = this.postId;
         
         posts.doc(pid).set({ pid: pid,
                              uid: uid,
@@ -96,21 +103,32 @@ export class AddPostPage {
     
     this.savePhoto(options);
   }
+  
+  savePhoto (options) {
+    this.postId = this.afs.createId();
     
-  async savePhoto (options) {
-    
-    // const result = await this.camera.getPicture(options);
-    // const image = 'data:image/jpeg;base64,${result}';
-    
-    //this.toast.show(image.toString(), 1000);
-    
-    //const pictures = firebase.storage().ref('pictures/myPhoto');
-    
-    //this.toast.show(pictures.toString(), 1000);
-    
-    //pictures.putString(image, 'data_url');
-    
+    this.camera.getPicture(options)
+      .then(data => {
+        let base64Image = 'data:image/jpeg;base64,' + data;
+        
+        return this.imageSrv.uploadImage(base64Image, this.afAuth.auth.getAuth().uid, postId);
+      });
   }
+    
+  // async savePhoto (options) {
+    
+  //   const result = await this.camera.getPicture(options);
+  //   const image = 'data:image/jpeg;base64,${result}';
+    
+  //   this.toast.show(image.toString(), 1000);
+    
+  //   const pictures = firebase.storage().ref('pictures/myPhoto');
+    
+  //   this.toast.show(pictures.toString(), 1000);
+    
+  //   pictures.putString(image, 'data_url');
+    
+  // }
   
 
 }

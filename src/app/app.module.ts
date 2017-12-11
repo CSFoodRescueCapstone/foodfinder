@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ToastService } from '../services/toast.service';
 
 import { Camera } from '@ionic-native/camera';
+import { ImageProvider } from '../providers/image/image';
 
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './firebase.credentials';
@@ -63,7 +64,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ToastService,
-    Camera
+    Camera,
+    ImageProvider
   ]
 })
 export class AppModule {}
