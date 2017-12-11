@@ -108,12 +108,16 @@ export class AddPostPage {
   savePhoto (options) {
     this.postId = this.afs.createId();
     
-    this.camera.getPicture(options)
-      .then(data => {
-        let base64Image = 'data:image/jpeg;base64,' + data;
-        
-        return this.imageSrv.uploadImage(base64Image, this.afAuth.auth.getAuth().uid, postId);
-      });
+    this.storage.get('uid').then((val) => {
+      var uid = val;
+      
+      this.camera.getPicture(options)
+        .then(data => {
+          let base64Image = 'data:image/jpeg;base64,' + data;
+          
+          return this.imageSrv.uploadImage(base64Image, uid, this.postId);
+        });
+    });
   }
     
   // async savePhoto (options) {
