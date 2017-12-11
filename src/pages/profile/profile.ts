@@ -16,8 +16,8 @@ import { Observable } from 'rxjs/Observable';
 
 export class ProfilePage {
   
-   name$: Observable<string> = "";
-   username$: Observable<string> = "";
+   name$: Observable<string>;
+   username$: Observable<string>;
 
   constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
     
