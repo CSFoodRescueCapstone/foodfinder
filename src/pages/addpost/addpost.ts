@@ -115,6 +115,8 @@ export class AddPostPage {
         .then(data => {
           let base64Image = 'data:image/jpeg;base64,' + data;
           
+          this.toast.show(base64Image.toString(), 5000);
+          
           return this.imageSrv.uploadImage(base64Image, uid, this.postId);
         });
     });
