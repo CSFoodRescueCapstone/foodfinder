@@ -1,30 +1,27 @@
 <ion-header class = "header">
   <ion-navbar>
     <ion-title>
-      Your Profile
+      Profile
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  
-  <div id="profilebuttons">
+<ion-content class="page">
     
-    <div id="profiletext">
-      
-      <ion-label class="name">{{name}}</ion-label>
-      <ion-label class="username">{{username}}</ion-label>
-      
-    </div>
+  <div id="profiletext">
     
-    <button ion-button class = "viewoldposts" (click) = "viewOldPosts()">View Your Old Posts</button><br>
+    <ion-label class="name">{{name$}}</ion-label>
+    <ion-label class="username">@{{username$}}</ion-label>
     
-    <button ion-button class = "changepassword" (click) = "changePassword()">Change Password</button>
-    <button ion-button class = "changeusername" (click) = "changeUsername()">Change Username</button>
- 
+    <ion-label class="thanksnumber">0</ion-label>
+    <ion-label class="thankstext">Thanks Given</ion-label>
+    
+    <ion-label class="thanksnumber">0</ion-label>
+    <ion-label class="thankstext">Thanks Receieved</ion-label>
+    
   </div>
   
-    <button ion-button class = "logout" (click) = "logout()">Logout</button>
-    <button ion-button class = "delete" (click) = "deleteAccount()">Delete Account</button>
+    <button ion-button class="oldposts" (click) = "viewOldPosts()">Your Posts</button>
+    <button ion-button class="settings" (click) = "viewSettings()">Settings</button>
   
 </ion-content>

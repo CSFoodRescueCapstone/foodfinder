@@ -3,5 +3,138 @@ page-oldposts {
     .header {
         text-align: center;
     }
+    
+    .page {
+        margin: 0;
+        padding: 0;
+        background: #fafafa;
+    }
+    
+    .post {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        position: relative;
+    }
+    
+    .postgreen {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        position: relative;
+        box-shadow: 1px 1px 1px color($colors, primary);
+    }
+    
+    .postred {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        position: relative;
+        box-shadow: 1px 1px 1px color($colors, danger);
+    }
+    
+    h3.username {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        color: black;
+        float: left;
+    }
+    
+    h3.time {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        margin-left: 10px;
+        color: color($colors, secondary);
+        float: left;
+    }
+    
+    .clear
+    {
+      clear: both;
+    }
+    
+    h3.location {
+        font-size: 15px;
+        color: color($colors, secondary);
+    }
+    
+    .numbers {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+    }
+    
+    h3.numthanks {
+        font-size: 20px;
+        color: color($colors, primary);
+        background: transparent;
+        float: right;
+    }
+    
+    h3.numgone {
+        font-size: 20px;
+        color: color($colors, danger);
+        background: transparent;
+        float: right;
+        padding-right: 10px;
+    }
+    
+    p.info {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: black;
+        font-size: 15px;
+    }
+    
+    .thanks {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, secondary);
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .thanks:hover{
+        background-color: color($colors, light) !important;
+    }
+    
+    .mythanks {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, primary);
+        margin: 0;
+        margin-left: 10px;
+    }
+    
+    .mythanks:hover{
+        background-color: color($colors, light) !important;
+    }
+    
+    .gone {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, secondary);
+        margin: 0;
+    }
+    
+    .gone:hover{
+        background-color: color($colors, light) !important;
+    }
+    
+    .mygone {
+        width: calc(50% - 7px);
+        background: color($colors, light);
+        color: color($colors, danger);
+        margin: 0;
+    }
+    
+    .mygone:hover{
+        background-color: color($colors, light) !important;
+    }
 
 }

@@ -1,0 +1,50 @@
+page-settings {
+    
+    .page {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header {
+       text-align: center;
+    }
+    
+    .changepassword {
+       background: white;
+       border: 1px solid lightskyblue;
+       color: lightskyblue;
+    }
+    
+    .changeusername {
+       background: white;
+       border: 1px solid lightskyblue;
+       color: lightskyblue;
+    }
+
+    .logout {
+        background: orange;
+        color: white;
+        position: absolute;
+        bottom: 60px;
+        left: 10px;
+        width: calc(100% - 25px);
+    }
+    
+    .logout:hover {
+        background-color: orange !important;
+    }
+    
+    .delete {
+        background: color($colors, danger);
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: calc(100% - 25px);
+    }
+    
+    .delete:hover {
+        background-color: color($colors, danger);
+    }
+
+}

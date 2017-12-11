@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { OldPostsPage } from '../pages/oldposts/oldposts';
+import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     TabsPage,
     RegisterPage,
     LoginPage,
-    OldPostsPage
+    OldPostsPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     TabsPage,
     RegisterPage,
     LoginPage,
-    OldPostsPage
+    OldPostsPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

@@ -1,62 +1,67 @@
 page-profile {
     
-   .header {
-       background: color($colors, primary);
+    .header {
        text-align: center;
-   }
-   
-   #profilebuttons {
-       text-align: center;
-   }
-   
-   #profiletext {
-       color: black;
-   }
-   
-   .username {
-       font-size: 25px;
-   }
-   
-   .viewoldposts {
-       background: white;
-       border: 1px solid #4CAF50;
-       color: color($colors, primary);
-   }
-   
-   .changepassword {
-       background: white;
-       border: 1px solid lightskyblue;
-       color: lightskyblue;
-       bottom: -50px;
-   }
-   
-   .changeusername {
-       background: white;
-       border: 1px solid lightskyblue;
-       color: lightskyblue;
-       bottom: -50px;
-   }
+    }
     
-    .logout {
-        background: orange;
+    .page {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #profiletext {
+       color: black;
+       text-align: center;
+    }
+    
+    #profiletext .name {
+        margin: 0px;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        font-size: 35px;
+    }
+    
+    #profiletext .username {
+        margin: 0;
+       font-size: 25px;
+       color: color($colors, secondary);
+    }
+    
+    #profiletext .thanksnumber {
+       font-size: 45px;
+       margin: 0px;
+       margin-top: 60px;
+    }
+    
+    #profiletext .thankstext {
+       font-size: 20px;
+       margin: 0px;
+       color: color($colors, secondary);
+    }
+    
+    .oldposts {
+        background: color($colors, primary);
         color: white;
         position: absolute;
         bottom: 60px;
         left: 10px;
-        width: calc(100% - 20px);
+        width: calc(100% - 25px);
     }
     
-    .logout:hover{
-        background-color: orange !important;
+    .oldposts:hover {
+        background-color: color($colors, primary);
     }
     
-    .delete {
-        background: color($colors, danger);
+    .settings {
+        background: color($colors, secondary);
         color: white;
         position: absolute;
         bottom: 10px;
         left: 10px;
-        width: calc(100% - 20px);
+        width: calc(100% - 25px);
     }
-
+    
+    .settings:hover {
+        background-color: color($colors, secondary);
+    }
 }
