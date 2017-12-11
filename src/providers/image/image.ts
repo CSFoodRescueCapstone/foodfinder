@@ -15,15 +15,15 @@ export class ImageProvider {
     console.log('Hello ImageProvider Provider');
   }
   
-  uploadImage(image: string, userId: string, photoID: string): any {
+  uploadImage(image: string, userId: string, photoId: string): any {
     let storageRef = firebase.storage().ref();
-    let imageRef = storageRef.child(`${userId}/${photoID}.jpg`);
+    let imageRef = storageRef.child(`${userId}/${photoId}.jpg`);
     return imageRef.putString(image, 'data_url');
   }
   
   getImage(userId: string, photoId: string): any {
     let storageRef = firebase.storage().ref();
-    let imageRef = storageRef.child(`${userId}/${photoID}`);
+    let imageRef = storageRef.child(`${userId}/${photoId}`);
     return imageRef.getDownloadURL();
   }
 }

@@ -3,11 +3,12 @@ import { Post } from '../../models/post';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireAuth } from "angularfire2/auth";
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ToastService } from '../../services/toast.service';
 import { TabsPage } from '../tabs/tabs';
 
-import { ImageProvider } from '../providers/image/image';
+import { ImageProvider } from '../../providers/image/image';
 
 // import { storage } from 'firebase';
 import * as firebase from 'firebase';
