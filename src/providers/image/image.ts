@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 
@@ -11,7 +11,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class ImageProvider {
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello ImageProvider Provider');
   }
   
