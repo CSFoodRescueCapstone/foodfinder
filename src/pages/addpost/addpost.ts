@@ -20,7 +20,6 @@ import * as firebase from 'firebase';
 export class AddPostPage {
   
   post = {} as Post;
-  private images = [];
   private postId: string;
 
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore,
