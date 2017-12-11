@@ -103,7 +103,6 @@ export class AddPostPage {
     }
     
     this.savePhoto(options);
-    this.toast.show("image saved", 5000);
   }
   
   savePhoto (options) {
@@ -119,17 +118,13 @@ export class AddPostPage {
         }, (err) => {
           this.toast.show(err, 5000);
         });
-          
-          // this.toast.show(base64Image, 5000);
-          
-          // return this.imageSrv.uploadImage(base64Image, uid, this.postId);
     });
   }
     
   // async savePhoto (options) {
     
   //   const result = await this.camera.getPicture(options);
-  //   const image = 'data:image/jpeg;base64,${result}';
+  //   let base64Image = 'data:image/jpeg;base64,' + imageData;
     
   //   this.toast.show(image.toString(), 1000);
     
