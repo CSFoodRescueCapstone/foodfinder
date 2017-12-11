@@ -25,7 +25,7 @@ export class AddPostPage {
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore,
               private toast: ToastService, private storage: Storage, public navCtrl: NavController,
               private camera: Camera, private imageSrv: ImageProvider) {
-    postId = "";
+    this.postId = "";
   }
 
   addPost(post: Post) {
