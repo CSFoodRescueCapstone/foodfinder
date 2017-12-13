@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { OldPostsPage } from '../pages/oldposts/oldposts';
 import { SettingsPage } from '../pages/settings/settings';
+import { MapPage } from '../pages/map/map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,6 +26,8 @@ import { FIREBASE_CONFIG } from './firebase.credentials';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { GoogleMaps } from '@ionic-native/google-maps';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     RegisterPage,
     LoginPage,
     OldPostsPage,
-    SettingsPage
+    SettingsPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     RegisterPage,
     LoginPage,
     OldPostsPage,
-    SettingsPage
+    SettingsPage,
+    MapPage
   ],
   providers: [
     StatusBar,
@@ -65,7 +70,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ToastService,
     Camera,
-    ImageProvider
+    ImageProvider,
+    GoogleMaps
   ]
 })
 export class AppModule {}

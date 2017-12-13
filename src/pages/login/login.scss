@@ -32,12 +32,28 @@ page-login {
         margin: 0;
     }
     
+    .forgotpassword {
+        // color: black;
+        color: color($colors, secondary);
+        text-decoration: underline;
+        font-size: 12px;
+        float: right;
+        height: 36px;
+        margin: 0;
+        margin-right: 8px;
+    }
+    
+    .forgotpassword:hover {
+        background-color: white !important;
+    }
+    
     .register {
         background: color($colors, light);
         color: black;
         width: calc(50% - 22px);
         height: 45px;
         margin: 55px 6px 10px 15px;
+        float: left;
     }
     
     .register:hover{
@@ -49,7 +65,8 @@ page-login {
         color: white;
         width: calc(50% - 22px);
         height: 45px;
-        margin: 55px 10px 10px 6px;
+        margin: 19px 10px 10px 6px;
+        float: left;
     }
     
     .login:hover{

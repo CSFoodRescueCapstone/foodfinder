@@ -29,6 +29,8 @@
     <ion-input type="password" [(ngModel)] = "user.password"></ion-input>
   </ion-item>
   
+  <button ion-button clear class="forgotpassword" (click) = "forgotPassword()">Forgot Password?</button>
+  
   <button ion-button class="register" (click) = "register()">Register</button>
   <button ion-button class="login" (click) = "login(user)">Login</button>
   

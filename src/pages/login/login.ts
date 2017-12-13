@@ -65,4 +65,15 @@ export class LoginPage {
   badLogin() {
     this.toast.show('Please try again.', 1000);
   }
-} // end class
+  
+  forgotPassword() {
+    var user = firebase.auth().currentUser;
+    var newPassword = getASecureRandomPassword();
+
+    user.updatePassword(newPassword).then(function() {
+     // Update successful.
+    }).catch(function(error) {
+    // An error happened.
+    });
+  }
+}
