@@ -71,6 +71,7 @@ export class LoginPage {
 
     this.afAuth.auth.sendPasswordResetEmail(emailAddress).then(function() {
     // Email sent.
+    // this.toast.show('An email has been sent.', 3000);
     }).catch(function(error) {
     // An error happened.
     });

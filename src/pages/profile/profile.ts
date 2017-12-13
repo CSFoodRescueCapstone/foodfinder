@@ -39,10 +39,6 @@ export class ProfilePage {
     
   }
   
-  changePhoto() { // method for the changePhoto button
-    
-  }
-  
   viewOldPosts() { // method for the viewOldPosts button
     this.navCtrl.push(OldPostsPage);
   }
@@ -50,13 +46,4 @@ export class ProfilePage {
   viewSettings() { // method for the viewOldPosts button
     this.navCtrl.push(SettingsPage);
   }
-  
-  changePassword() { // method for the changePassword button
-    
-  }
-  
-  changeUsername() { // method for the changeUsername button
-    
-  }
-
 }

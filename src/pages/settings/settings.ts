@@ -21,6 +21,15 @@ export class SettingsPage {
   constructor(private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  
+  changePassword() { // method for the changePassword button
+    
+  }
+  
+  changeUsername() { // method for the changeUsername button
+    
+  }
+  
   logout() { // method for the logout button
     const resultLogout = this.afAuth.auth.signOut();
     
