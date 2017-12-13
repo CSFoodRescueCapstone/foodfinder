@@ -22,15 +22,32 @@ export class SettingsPage {
   }
 
   
-  changePassword() { // method for the changePassword button
+  changePassword() {
+    //var user = firebase.auth().currentUser;
+    //var newPassword = getASecureRandomPassword();
+
+   // user.updatePassword(newPassword).then(function() {
+    // Update successful.
+    //}).catch(function(error) {
+    // An error happened.
+   // });
+  }
+  
+  changeUsername() {
+    
+    //var user = firebase.auth().currentUser;
+
+   // user.updateProfile({
+   //displayName: "Jane Q. User"
+   // }).then(function() {
+     // Update successful.
+    //}).catch(function(error) {
+     // An error happened.
+   // });
     
   }
   
-  changeUsername() { // method for the changeUsername button
-    
-  }
-  
-  logout() { // method for the logout button
+  logout() {
     const resultLogout = this.afAuth.auth.signOut();
     
     resultLogout.then(function() {
@@ -47,7 +64,15 @@ export class SettingsPage {
      window.location.reload();
   }
   
-  deleteAccount() { // method for the deleteAccount button
+  deleteAccount() {
+  
+    //var user = firebase.auth().currentUser;
+
+    //user.delete().then(function() {
+     // User deleted.
+    //}).catch(function(error) {
+     // An error happened.
+   //});
     
   }
 

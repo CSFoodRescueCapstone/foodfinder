@@ -70,10 +70,8 @@ export class LoginPage {
     var emailAddress = "laura.himelman@gmail.com";
 
     this.afAuth.auth.sendPasswordResetEmail(emailAddress).then(function() {
-    // Email sent.
-    // this.toast.show('An email has been sent.', 3000);
+      // this.toast.show('An email has been sent.', 3000);
     }).catch(function(error) {
-    // An error happened.
     });
   }
 }
