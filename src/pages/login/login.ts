@@ -67,9 +67,10 @@ export class LoginPage {
   }
   
   forgotPassword() {
-    var emailAddress = "laura.himelman@gmail.com";
+    //var email = this.storage.get('email').then((val1) => {email = val1;}
+    var email = "laura.himelman@gmail.com";
 
-    this.afAuth.auth.sendPasswordResetEmail(emailAddress).then(function() {
+    this.afAuth.auth.sendPasswordResetEmail(email).then(function() {
       // this.toast.show('An email has been sent.', 3000);
     }).catch(function(error) {
     });
