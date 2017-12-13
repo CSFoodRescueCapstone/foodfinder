@@ -67,11 +67,10 @@ export class LoginPage {
   }
   
   forgotPassword() {
-    var user = firebase.auth().currentUser;
-    var newPassword = getASecureRandomPassword();
+    var emailAddress = "laura.himelman@gmail.com";
 
-    user.updatePassword(newPassword).then(function() {
-     // Update successful.
+    this.afAuth.auth.sendPasswordResetEmail(emailAddress).then(function() {
+    // Email sent.
     }).catch(function(error) {
     // An error happened.
     });
