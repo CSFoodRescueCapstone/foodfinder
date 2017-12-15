@@ -18,6 +18,7 @@ export class ConferenceData {
         .map(this.processData, this);
     }
   }
+  
 
   getSpeakers() {
     return this.load().map((data: any) => {
