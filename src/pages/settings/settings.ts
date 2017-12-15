@@ -7,6 +7,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { User } from '../../models/user';
 import { DBUser } from '../../models/dbuser';
+import { Post } from '../../models/post';
 
 /**
  * Generated class for the SettingsPage page.
