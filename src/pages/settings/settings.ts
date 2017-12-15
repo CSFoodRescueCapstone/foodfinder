@@ -8,6 +8,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { User } from '../../models/user';
 import { DBUser } from '../../models/dbuser';
 import { Post } from '../../models/post';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the SettingsPage page.
