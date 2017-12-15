@@ -27,7 +27,7 @@ export class AddPostPage {
               private camera: Camera, private imageSrv: ImageProvider) {
   }
   
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.postId = this.afs.createId();
   }
 

@@ -14,26 +14,26 @@ page-feed {
         width: calc(100% - 30px);
         margin: 0 auto;
         margin-top: 15px;
-        padding: 10px;
+        padding: 0;
         position: relative;
     }
     
-    .postgreen {
-        width: calc(100% - 30px);
+    .gray {
+        width: 100%;
         margin: 0 auto;
-        margin-top: 15px;
         padding: 10px;
         position: relative;
-        box-shadow: 1px 1px 1px color($colors, primary);
+        // box-shadow: 1px 1px 1px color($colors, secondary);
+        border: 1px solid color($colors, primary);
     }
     
-    .postred {
-        width: calc(100% - 30px);
+    .red {
+        width: 100%;
         margin: 0 auto;
-        margin-top: 15px;
         padding: 10px;
         position: relative;
-        box-shadow: 1px 1px 1px color($colors, danger);
+        // box-shadow: 1px 1px 1px color($colors, danger);
+        border: 1px solid color($colors, danger);
     }
     
     h3.username {

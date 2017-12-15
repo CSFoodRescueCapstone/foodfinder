@@ -101,7 +101,7 @@ export class SettingsPage {
   sendResetEmail() {
 
     this.afAuth.auth.sendPasswordResetEmail(this.email).then(function() {
-       this.toast.show('An email has been sent.', 3000);
+       this.printToast();
     }).catch(function(error) {
     });
     
@@ -134,6 +134,10 @@ export class SettingsPage {
      // An error happened.
    //});
     
+  }
+  
+  printToast() {
+    this.toast.show('An email has been sent.', 3000);
   }
 
 }

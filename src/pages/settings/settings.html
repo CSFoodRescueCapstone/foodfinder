@@ -20,14 +20,14 @@
     <ion-input value="{{name$}}" type="text" [(ngModel)] = "user.name"></ion-input>
   </ion-item>
   
-  <button ion-button class="update" (click) = "editName(user)">Update</button>
+  <button ion-button class="update" (click) = "editName(user)">Save</button>
   
   <ion-item class="textbox">
     <ion-label floating>Username</ion-label>
     <ion-input value="{{username$}}" type="text" [(ngModel)] = "user.username"></ion-input>
   </ion-item>
   
-  <button ion-button class="update" (click) = "editUsername(user)">Update</button>
+  <button ion-button class="update" (click) = "editUsername(user)">Save</button>
   
   <button ion-button class="sendresetemail" (click) = "sendResetEmail()">Send Password Reset Email</button>
   

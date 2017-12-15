@@ -49,10 +49,12 @@ export class LoginPage {
   goodLogin(uid) {
     let userRef = this.afs.collection('users').ref.where('uid', '==', uid);
     var username = "";
+    var email = 
     
     userRef.get().then((result) => {
       result.forEach(doc => {
         username = doc.data()['username'];
+        
         
         this.storage.set('loggedin', true);
         this.storage.set('uid', uid);
