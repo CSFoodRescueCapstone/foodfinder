@@ -25,7 +25,10 @@ export class AddPostPage {
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore,
               private toast: ToastService, private storage: Storage, public navCtrl: NavController,
               private camera: Camera, private imageSrv: ImageProvider) {
-    this.postId = "";
+  }
+  
+  ionViewDidLoad() {
+    this.postId = this.afs.createId();
   }
 
   addPost(post: Post) {
@@ -105,7 +108,6 @@ export class AddPostPage {
   }
   
   savePhoto (options) {
-    this.postId = this.afs.createId();
     
     this.storage.get('uid').then((val) => {
       var uid = val;
@@ -118,6 +120,7 @@ export class AddPostPage {
           this.toast.show(err, 5000);
         });
     });
+    
   }
     
   // async savePhoto (options) {

@@ -94,7 +94,7 @@ page-feed {
     .thanks {
         width: calc(50% - 7px);
         background: color($colors, light);
-        color: color($colors, secondary);
+        color: black;
         margin: 0;
         margin-left: 10px;
     }
@@ -118,7 +118,7 @@ page-feed {
     .gone {
         width: calc(50% - 7px);
         background: color($colors, light);
-        color: color($colors, secondary);
+        color: black;
         margin: 0;
     }
     

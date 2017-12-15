@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { RegisterPage } from '../register/register';
 import { TabsPage } from '../tabs/tabs';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 /**
  * Generated class for the LoginPage page.
@@ -67,12 +68,6 @@ export class LoginPage {
   }
   
   forgotPassword() {
-    //var email = this.storage.get('email').then((val1) => {email = val1;}
-    var email = "laura.himelman@gmail.com";
-
-    this.afAuth.auth.sendPasswordResetEmail(email).then(function() {
-      // this.toast.show('An email has been sent.', 3000);
-    }).catch(function(error) {
-    });
+    this.navCtrl.push(ForgotPasswordPage);
   }
 }

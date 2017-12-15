@@ -15,8 +15,21 @@
 
 <ion-content class="page">
   
-  <!--<button ion-button class = "changepassword" (click) = "changePassword()">Change Password</button>-->
-  <!--<button ion-button class = "changeusername" (click) = "changeUsername()">Change Username</button>-->
+  <ion-item class="textbox">
+    <ion-label floating>Name</ion-label>
+    <ion-input value="{{name$}}" type="text" [(ngModel)] = "user.name"></ion-input>
+  </ion-item>
+  
+  <button ion-button class="update" (click) = "editName(user)">Update</button>
+  
+  <ion-item class="textbox">
+    <ion-label floating>Username</ion-label>
+    <ion-input value="{{username$}}" type="text" [(ngModel)] = "user.username"></ion-input>
+  </ion-item>
+  
+  <button ion-button class="update" (click) = "editUsername(user)">Update</button>
+  
+  <button ion-button class="sendresetemail" (click) = "sendResetEmail()">Send Password Reset Email</button>
   
   <button ion-button class="logout" (click) = "logout()">Logout</button>
   <button ion-button class="delete" (click) = "deleteAccount()">Delete Account</button>

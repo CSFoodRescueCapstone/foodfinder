@@ -9,16 +9,38 @@ page-settings {
        text-align: center;
     }
     
-    .changepassword {
-       background: white;
-       border: 1px solid lightskyblue;
-       color: lightskyblue;
+    .textbox {
+        background: transparent;
+        color: black;
+        width: calc(100% - 120px);
+        margin: 0;
+        float: left;
+        height: 68px;
     }
     
-    .changeusername {
-       background: white;
-       border: 1px solid lightskyblue;
-       color: lightskyblue;
+    .update {
+        background: color($colors, light);
+        color: black;
+        width: 80px;
+        height: 36px;
+        float: left;
+        margin: 30px 0px 0px 20px;
+    }
+    
+    .update:hover {
+        background: color($colors, light) !important;
+    }
+    
+    .sendresetemail {
+        background: color($colors, light) !important;
+        width: calc(100% - 35px);
+        color: black;
+        margin-top: 30px;
+        margin-left: 15px;
+    }
+    
+    .sendresetemail:hover {
+        background: color($colors, light) !important;
     }
 
     .logout {
@@ -44,7 +66,7 @@ page-settings {
     }
     
     .delete:hover {
-        background-color: color($colors, danger);
+        background-color: color($colors, danger) !important;
     }
 
 }

@@ -18,25 +18,33 @@ export class ProfilePage {
   
    name$: Observable<string>;
    username$: Observable<string>;
+   public uid: string;
+   public email: string;
 
   constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
     
+    this.updateData();
+    
+  }
+  
+  ionViewWillEnter() {
+    this.updateData();
+  }
+  
+  updateData() {
     this.storage.get('uid').then((val) => {
-      var uid = val;
+      this.uid = val;
       
-      let userRef = this.afs.collection('users').ref.where('uid', '==', uid);
+      let userRef = this.afs.collection('users').ref.where('uid', '==', this.uid);
     
       userRef.get().then((result) => {
         result.forEach(doc => {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
-          
-          console.log(this.name$);
-          console.log(this.username$);
+          this.email = doc.data()['email'];
         })
       })
     });
-    
   }
   
   viewOldPosts() { // method for the viewOldPosts button
@@ -44,6 +52,8 @@ export class ProfilePage {
   }
   
   viewSettings() { // method for the viewOldPosts button
-    this.navCtrl.push(SettingsPage);
+    this.navCtrl.push(SettingsPage, {
+      uid: this.uid, name: this.name$, username: this.username$, email: this.email
+    });
   }
 }

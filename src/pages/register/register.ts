@@ -35,7 +35,7 @@ export class RegisterPage {
         if(result) {
           this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
           .then((returnedUser) => {
-            this.goodLogin(returnedUser.uid, user.username, user.name);
+            this.goodLogin(returnedUser.uid, user.username, user.name, user.email);
           })
           .catch((err) => {         
             console.log('Error', err);
@@ -48,13 +48,18 @@ export class RegisterPage {
     }
   }
   
-  goodLogin(uid: string, username: string, name: string) {
+  goodLogin(uid: string, username: string, name: string, email: string) {
     this.storage.set('loggedin', true);
     this.storage.set('uid', uid);
     this.storage.set('username', username);
     
     const users = this.afs.collection<DBUser>('users');
-    users.add({ uid: uid, username: username, name: name});
+    
+    users.doc(uid).set({ uid: uid,
+                         name: name,
+                         username: username,
+                         email: email
+    });
     
     this.navCtrl.push(TabsPage);
   }

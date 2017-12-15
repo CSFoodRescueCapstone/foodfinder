@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { ToastService } from '../../services/toast.service';
 import { LoginPage } from '../login/login';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { User } from '../../models/user';
+import { DBUser } from '../../models/dbuser';
 
 /**
  * Generated class for the SettingsPage page.
@@ -18,32 +22,86 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class SettingsPage {
 
-  constructor(private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-  }
+  user = {} as DBUser;
+  name$: Observable<string>;
+  username$: Observable<string>;
+  uid: string;
+  name: string;
+  username: string;
+  email: string;
 
+  constructor(private toast: ToastService, private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   
-  changePassword() {
-    //var user = firebase.auth().currentUser;
-    //var newPassword = getASecureRandomPassword();
-
-   // user.updatePassword(newPassword).then(function() {
-    // Update successful.
-    //}).catch(function(error) {
-    // An error happened.
-   // });
+    this.uid = this.navParams.get('uid');
+    this.name$ = this.navParams.get('name');
+    this.username$ = this.navParams.get('username');
+    this.name = this.navParams.get('name');
+    this.username = this.navParams.get('username');
+    this.email = this.navParams.get('email');
   }
   
-  changeUsername() {
+  editName(user: DBUser) {
+    user.username = this.username;
+    user.uid = this.uid;
+    this.name = user.name;
+      
+    var userPath = 'users/' + this.uid;
+    var userDoc = this.afs.doc<DBUser>(userPath);
+    userDoc.update(user);
     
-    //var user = firebase.auth().currentUser;
+    this.toast.show('Name updated.', 2000);
+  }
+  
+  editUsername(user: DBUser) {
+    user.name = this.name;
+    user.uid = this.uid;
+    this.username = user.username;
+      
+    var userPath = 'users/' + this.uid;
+    var userDoc = this.afs.doc<DBUser>(userPath);
+    userDoc.update(user);
+    this.storage.set('username', user.username);
+    
+    let postRef = this.afs.collection('posts').ref.where('uid', '==', user.uid);
+    const posts = this.afs.collection<Post>('posts', ref => ref.where('uid', '==', user.uid));
+    
+    postRef.get().then((result) => {
+      result.forEach(doc => {
+        var pid = doc.data()['pid'];
+        var uid = doc.data()['uid'];
+        var location = doc.data()['location'];
+        var info = doc.data()['info'];
+        var photopath = doc.data()['photopath'];
+        var time = doc.data()['time'];
+        var thanks = doc.data()['thanks'];
+        var numthanks = doc.data()['numthanks'];
+        var gone = doc.data()['gone'];
+        var numgone = doc.data()['numgone'];
+        
+        posts.doc(pid).set({ pid: pid,
+                             uid: uid,
+                             username: user.username,
+                             location: location,
+                             info: info,
+                             photopath: photopath,
+                             time: time,
+                             thanks: thanks,
+                             numthanks: numthanks,
+                             gone: gone,
+                             numgone: numgone
+        });
+      })
+    })
+    
+    this.toast.show('Username updated.', 2000);
+  }
+  
+  sendResetEmail() {
 
-   // user.updateProfile({
-   //displayName: "Jane Q. User"
-   // }).then(function() {
-     // Update successful.
-    //}).catch(function(error) {
-     // An error happened.
-   // });
+    this.afAuth.auth.sendPasswordResetEmail(this.email).then(function() {
+       this.toast.show('An email has been sent.', 3000);
+    }).catch(function(error) {
+    });
     
   }
   

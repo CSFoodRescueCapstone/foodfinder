@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { Observable } from 'rxjs/Observable';
 import { Storage } from '@ionic/storage';
 import { Post } from '../../models/post';
+import { ToastService } from '../../services/toast.service';
 
 /**
  * Generated class for the OldPostsPage page.
@@ -23,7 +24,7 @@ export class OldPostsPage {
   postDoc: AngularFirestoreDocument<Post>;
   public myuid: string;
 
-  constructor(private storage: Storage, private afs: AngularFirestore, public navCtrl: NavController) {
+  constructor(private toast: ToastService, private storage: Storage, private afs: AngularFirestore, public navCtrl: NavController) {
     var uid = "";
     
     this.storage.get('uid').then((val) => {
@@ -84,6 +85,13 @@ export class OldPostsPage {
       this.postDoc = this.afs.doc<Post>(postPath);
       this.postDoc.update(post);
     });
+  }
+  
+  deletePost(post: Post) {
+      var postPath = 'posts/' + post.pid;
+      this.postDoc = this.afs.doc<Post>(postPath);
+      this.postDoc.delete();
+      this.toast.show('Post deleted.', 1000);
   }
 
 }
