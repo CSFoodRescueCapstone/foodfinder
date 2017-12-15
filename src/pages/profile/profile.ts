@@ -51,7 +51,7 @@ export class ProfilePage {
         result.forEach(doc => {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
-          this.numthanks$ = numthanks;
+          this.numthanks$ = numthanks.toString();
           this.email = doc.data()['email'];
         });
       });
