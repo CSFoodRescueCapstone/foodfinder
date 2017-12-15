@@ -85,14 +85,15 @@ page-oldposts {
     }
     
     .delete {
-        font-size: 20px;
-        color: black;
-        background: transparent;
         float: right;
         height: 18px;
-        padding: 0;
-        padding-left: 5px;
-        margin: 5px;
+        width: 18px;
+        margin: 0px;
+        margin-left: 10px;
+        margin-top: 5px;
+        font-size: 12px;
+        background: transparent;
+        color: black;
     }
     
     p.info {

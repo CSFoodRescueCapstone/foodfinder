@@ -24,15 +24,11 @@ export class ProfilePage {
 
   constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
     
-    this.name$ = " ";
-    this.username$ = " ";
     this.updateData();
     
   }
   
   ionViewWillEnter() {
-    this.name$ = " ";
-    this.username$ = " ";
     this.updateData();
   }
   
