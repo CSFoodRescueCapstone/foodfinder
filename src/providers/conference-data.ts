@@ -9,7 +9,7 @@ import 'rxjs/add/observable/of';
 export class ConferenceData {
 
   constructor(public http: Http) { }
-
+ 
 //   load(): any {
 //     if (this.data) {
 //       return Observable.of(this.data);

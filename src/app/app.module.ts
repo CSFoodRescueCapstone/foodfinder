@@ -79,6 +79,6 @@ import { ConferenceData } from '../providers/conference-data';
     ToastService,
     Camera,
     ImageProvider
-  ]
+  ] 
 })
 export class AppModule {}

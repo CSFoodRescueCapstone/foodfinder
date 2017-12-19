@@ -83,7 +83,7 @@ export class FeedPage {
       this.postDoc.update(post);
     });
   }
-  
+   
   getTime(time: number) {
     
     var day = 86400000;

@@ -94,7 +94,7 @@ export class OldPostsPage {
     var minute = 60000;
     
     var posttime = Math.abs(time);
-    var elapsed = this.nowtime - posttime;
+    var elapsed = this.nowtime - posttime; 
     
     if(elapsed < hour) {
       
