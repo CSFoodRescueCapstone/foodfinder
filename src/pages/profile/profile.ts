@@ -18,7 +18,7 @@ export class ProfilePage {
   
    name$: Observable<string>;
    username$: Observable<string>;
-   numthanks$: Observable<number>;
+   numthanks$: Observable<any>;
    public uid: string;
    public email: string;
 
@@ -37,11 +37,11 @@ export class ProfilePage {
       this.uid = val;
       
       let postRef = this.afs.collection('posts').ref.where('uid', '==', this.uid);
-      var numthanks = 0;
+      // var numthanks = 0;
       
       postRef.get().then((result) => {
         result.forEach(doc => {
-           numthanks += doc.data()['numthanks'];
+          // this.numthanks$ += doc.data()['numthanks'];
         });
       });
       
@@ -51,7 +51,7 @@ export class ProfilePage {
         result.forEach(doc => {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
-          this.numthanks$ = numthanks.toString();
+          // this.numthanks$ = numthanks.asObservable(); //cast to observable
           this.email = doc.data()['email'];
         });
       });

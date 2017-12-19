@@ -23,7 +23,6 @@ page-feed {
         margin: 0 auto;
         padding: 10px;
         position: relative;
-        // box-shadow: 1px 1px 1px color($colors, secondary);
         border: 1px solid color($colors, primary);
     }
     
@@ -32,7 +31,6 @@ page-feed {
         margin: 0 auto;
         padding: 10px;
         position: relative;
-        // box-shadow: 1px 1px 1px color($colors, danger);
         border: 1px solid color($colors, danger);
     }
     
@@ -45,10 +43,10 @@ page-feed {
     }
     
     h3.time {
-        font-size: 16px;
-        font-weight: 600;
-        margin-bottom: 2px;
-        margin-left: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 5px;
+        margin-left: 6px;
         color: color($colors, secondary);
         float: left;
     }

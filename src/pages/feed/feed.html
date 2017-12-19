@@ -6,14 +6,13 @@
 
 <ion-content class="page">
 
-  <!--<ion-card class="postred" *ngIf="post.numgone > 0" *ngFor="let post of posts$ | async">-->
   <ion-card class="post" *ngFor="let post of posts$ | async">
     
     <div class="gray" *ngIf="!post.gone.length">
   
       <div class="postheader">
         <h3 class="username">{{post.username}}</h3>
-        <!--<h3 class="time">getTime({{post.time}})</h3>-->
+        <h3 class="time">{{ getTime(post.time) }}</h3>
         <div class="clear"></div>
       </div>
       
@@ -21,7 +20,6 @@
       
       <div class="numbers">
         <h3 class="numthanks">{{post.numthanks}}</h3>
-        <!--<h3 class="numgone">{{post.numgone}}</h3>-->
       </div>
     
       <p class="info">{{post.info}}</p>
@@ -38,7 +36,7 @@
   
       <div class="postheader">
         <h3 class="username">{{post.username}}</h3>
-        <!--<h3 class="time">getTime({{post.time}})</h3>-->
+        <h3 class="time">{{ getTime(post.time) }}</h3>
         <div class="clear"></div>
       </div>
       
@@ -46,7 +44,6 @@
       
       <div class="numbers">
         <h3 class="numthanks">{{post.numthanks}}</h3>
-        <!--<h3 class="numgone">{{post.numgone}}</h3>-->
       </div>
     
       <p class="info">{{post.info}}</p>

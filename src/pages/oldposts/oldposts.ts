@@ -87,6 +87,38 @@ export class OldPostsPage {
     });
   }
   
+  getTime(time: number) {
+    
+    var day = 86400000;
+    var hour = 3600000;
+    var minute = 60000;
+    
+    var posttime = Math.abs(time);
+    var elapsed = this.nowtime - posttime;
+    
+    if(elapsed < hour) {
+      
+      var mins = (elapsed / minute).toString();
+      mins = Math.round(mins).toString() + " mins";
+      return mins;
+      
+    } else if(elapsed < day) {
+      
+      var hrs = (elapsed / hour).toString();
+      hrs = Math.round(hrs).toString() + " hrs";
+      return hrs;
+      
+    } else {
+      var date = this.getDate(posttime);
+      return date;
+    }
+  }
+  
+  getDate(time: number) {
+    var postdate = new Date(time);
+    return postdate.toLocaleDateString();
+  }
+  
   deletePost(post: Post) {
       var postPath = 'posts/' + post.pid;
       this.postDoc = this.afs.doc<Post>(postPath);

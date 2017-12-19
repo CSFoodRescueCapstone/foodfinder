@@ -15,14 +15,46 @@ page-login {
         width: 100%;
         margin: 0;
         text-align: center;
-        margin-top: 30%;
-        margin-bottom: 50px;
+        margin-top: 20%;
+        margin-bottom: 40px;
+    }
+    
+    .logo {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+    
+    ion-img.glass {
+        background: white;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    
+    // ion-img.ff {
+    //     position: absolute;
+    //     top: 18px;
+    //     left: 13px;
+    //     background: transparent;
+    // }
+    
+    h2.ff {
+        position: absolute;
+        font-size: 24px;
+        top: 17px;
+        left: 15px;
+        margin: 0;
+        background: transparent;
+        color: color($colors, secondary);
     }
     
     h1.title {
         color: color($colors, primary);
         font-size: 56px;
         font-weight: 700;
+        margin: 10px 0px 10px 0px;
     }
     
     .textbox {

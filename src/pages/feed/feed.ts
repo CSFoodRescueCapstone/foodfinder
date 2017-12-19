@@ -14,6 +14,7 @@ export class FeedPage {
   posts$: Observable<any[]>;
   postDoc: AngularFirestoreDocument<Post>;
   public myuid: string;
+  nowtime: number;
 
   constructor(private storage: Storage, private afs: AngularFirestore, public navCtrl: NavController) {
     var uid = "";
@@ -24,6 +25,11 @@ export class FeedPage {
       
       this.posts$ = this.afs.collection('posts', ref => ref.orderBy('time')).valueChanges();
     });
+  }
+  
+  ionViewWillEnter() {
+    var d = new Date();
+    this.nowtime = d.getTime();
   }
   
   thankPost(post: Post) {
@@ -79,6 +85,34 @@ export class FeedPage {
   }
   
   getTime(time: number) {
-    return Math.abs(time);
+    
+    var day = 86400000;
+    var hour = 3600000;
+    var minute = 60000;
+    
+    var posttime = Math.abs(time);
+    var elapsed = this.nowtime - posttime;
+    
+    if(elapsed < hour) {
+      
+      var mins = (elapsed / minute).toString();
+      mins = Math.round(mins).toString() + " mins";
+      return mins;
+      
+    } else if(elapsed < day) {
+      
+      var hrs = (elapsed / hour).toString();
+      hrs = Math.round(hrs).toString() + " hrs";
+      return hrs;
+      
+    } else {
+      var date = this.getDate(posttime);
+      return date;
+    }
+  }
+  
+  getDate(time: number) {
+    var postdate = new Date(time);
+    return postdate.toLocaleDateString();
   }
 }
