@@ -98,13 +98,13 @@ export class OldPostsPage {
     
     if(elapsed < hour) {
       
-      var mins = (elapsed / minute).toString();
+      var mins = (elapsed / minute);
       mins = Math.round(mins).toString() + " mins";
       return mins;
       
     } else if(elapsed < day) {
       
-      var hrs = (elapsed / hour).toString();
+      var hrs = (elapsed / hour);
       hrs = Math.round(hrs).toString() + " hrs";
       return hrs;
       
