@@ -97,14 +97,14 @@ export class FeedPage {
     if(elapsed < hour) {
       
       var mins = (elapsed / minute)
-      mins = Math.round(mins).toString() + " mins";
-      return mins;
+      var stringmins mins = Math.round(mins).toString() + " mins";
+      return stringmins;
       
     } else if(elapsed < day) {
       
       var hrs = (elapsed / hour)
-      hrs = Math.round(hrs).toString() + " hrs";
-      return hrs;
+      stringhrs = Math.round(hrs).toString() + " hrs";
+      return stringhrs;
       
     } else {
       var date = this.getDate(posttime);
