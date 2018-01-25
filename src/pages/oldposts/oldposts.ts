@@ -23,6 +23,7 @@ export class OldPostsPage {
   posts$: Observable<any[]>;
   postDoc: AngularFirestoreDocument<Post>;
   public myuid: string;
+  nowtime: number;
 
   constructor(private toast: ToastService, private storage: Storage, private afs: AngularFirestore, public navCtrl: NavController) {
     var uid = "";
@@ -33,6 +34,12 @@ export class OldPostsPage {
       
       this.posts$ = this.afs.collection('posts', ref => ref.where('uid', '==', uid).orderBy('time')).valueChanges();
     });
+  }
+  
+  ionViewWillEnter() {
+    //reset times on load
+    var d = new Date();
+    this.nowtime = d.getTime();
   }
   
   thankPost(post: Post) {
