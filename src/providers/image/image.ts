@@ -18,7 +18,8 @@ export class ImageProvider {
   uploadImage(image: string, userId: string, photoId: string): any {
     let storageRef = firebase.storage().ref();
     let imageRef = storageRef.child(`${userId}/${photoId}.jpg`);
-    return imageRef.putString(image, 'data_url');
+    // return imageRef.putString(image, 'data_url');
+    return imageRef.putString(image);
   }
   
   getImage(userId: string, photoId: string): any {
