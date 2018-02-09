@@ -41,7 +41,7 @@ export class ProfilePage {
       
       postRef.get().then((result) => {
         result.forEach(doc => {
-          //this.numthanks$ += doc.data()['numthanks'];
+          this.numthanks$ += doc.data()['numthanks'];
         });
       });
       
