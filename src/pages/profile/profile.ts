@@ -53,7 +53,7 @@ export class ProfilePage {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
           // this.numthanks$ = numthanks.asObservable(); //cast to observable
-          doc.data()['numthanks'] = numthanks;
+          doc.data()['numthanks'] = numthanks; //evenvernvlernvlerv
           this.numthanks$ = doc.data()['numthanks'];
           this.email = doc.data()['email'];
         });
