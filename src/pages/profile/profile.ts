@@ -55,16 +55,16 @@ export class ProfilePage {
         var userPath = 'users/' + this.uid;
         var userDoc = this.afs.doc<DBUser>(userPath);
         userDoc.update(user);
-      });
-      
-      let userRef = this.afs.collection('users').ref.where('uid', '==', this.uid);
+        
+        let userRef = this.afs.collection('users').ref.where('uid', '==', this.uid);
     
-      userRef.get().then((result) => {
-        result.forEach(doc => {
-          this.name$ = doc.data()['name'];
-          this.username$ = doc.data()['username'];
-          this.numthanks$ = doc.data()['numthanks'];
-          this.email = doc.data()['email'];
+        userRef.get().then((result) => {
+          result.forEach(doc => {
+            this.name$ = doc.data()['name'];
+            this.username$ = doc.data()['username'];
+            this.numthanks$ = doc.data()['numthanks'];
+            this.email = doc.data()['email'];
+          });
         });
       });
     });
