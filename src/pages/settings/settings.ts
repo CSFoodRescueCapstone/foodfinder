@@ -31,6 +31,7 @@ export class SettingsPage {
   name: string;
   username: string;
   email: string;
+  numthanks: number;
 
   constructor(private toast: ToastService, private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   

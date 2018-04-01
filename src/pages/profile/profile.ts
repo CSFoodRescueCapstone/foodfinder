@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { OldPostsPage } from '../oldposts/oldposts';
 import { SettingsPage } from '../settings/settings';
 import { User } from '../../models/user';
+import { DBUser } from '../../models/dbuser';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LoginPage } from '../login/login';
@@ -30,10 +31,10 @@ export class ProfilePage {
   }
   
   ionViewWillEnter() {
-    this.updateData(this.user);
+    this.updateData();
   }
   
-  updateData(user: DBUser) {
+  updateData() {
     this.storage.get('uid').then((val) => {
       this.uid = val;
       
