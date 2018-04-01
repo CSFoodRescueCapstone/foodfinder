@@ -18,7 +18,7 @@ export class ProfilePage {
   
    name$: Observable<string>;
    username$: Observable<string>;
-   numthanks$: Observable<any>;
+   numthanks$: Observable<number>;
    public uid: string;
    public email: string;
 
@@ -53,7 +53,7 @@ export class ProfilePage {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
           // this.numthanks$ = numthanks.asObservable(); //cast to observable
-          doc.data()['username'] = numthanks;
+          doc.data()['numthanks'] = numthanks;
           this.numthanks$ = doc.data()['numthanks'];
           this.email = doc.data()['email'];
         });
