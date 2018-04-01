@@ -9,6 +9,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs/Observable';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'page-profile',
@@ -24,7 +25,7 @@ export class ProfilePage {
    public email: string;
    public numthanks: number;
 
-  constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toast: ToastService, private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
     
     this.updateData();
     
@@ -48,6 +49,8 @@ export class ProfilePage {
         });
       });
       
+      this.toast.show(this.numthanks.toString(), 2000);
+      
       var user = {} as DBUser;
       user.numthanks = this.numthanks;
       var userPath = 'users/' + this.uid;
@@ -60,8 +63,6 @@ export class ProfilePage {
         result.forEach(doc => {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
-          // this.numthanks$ = numthanks.asObservable(); //cast to observable
-          //doc.data()['numthanks'] = numthanks; //evenvernvlernvlerv
           this.numthanks$ = doc.data()['numthanks'];
           this.email = doc.data()['email'];
         });
