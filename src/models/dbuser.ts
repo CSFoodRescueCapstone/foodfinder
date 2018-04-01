@@ -4,5 +4,6 @@ export interface DBUser {
     username: string;
     name: string;
     email: string;
+    numthanks: number;
     
 }

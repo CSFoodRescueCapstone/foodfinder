@@ -5,7 +5,7 @@ import { ToastService } from '../../services/toast.service';
 import { LoginPage } from '../login/login';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { User } from '../../models/user';
+// import { User } from '../../models/user';
 import { DBUser } from '../../models/dbuser';
 import { Post } from '../../models/post';
 import { Observable } from 'rxjs/Observable';
@@ -40,11 +40,13 @@ export class SettingsPage {
     this.name = this.navParams.get('name');
     this.username = this.navParams.get('username');
     this.email = this.navParams.get('email');
+    this.numthanks = this.navParams.get('numthanks');
   }
   
   editName(user: DBUser) {
     user.username = this.username;
     user.uid = this.uid;
+    user.numthanks = this.numthanks;
     this.name = user.name;
       
     var userPath = 'users/' + this.uid;
@@ -57,6 +59,7 @@ export class SettingsPage {
   editUsername(user: DBUser) {
     user.name = this.name;
     user.uid = this.uid;
+    user.numthanks = this.numthanks;
     this.username = user.username;
       
     var userPath = 'users/' + this.uid;

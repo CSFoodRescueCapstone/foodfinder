@@ -33,7 +33,6 @@ export class LoginPage {
   login(user: User) {
       this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
       .then((returnedUser) => {
-        //console.log('uid', returnedUser.uid);
         this.goodLogin(returnedUser.uid);
       })
       .catch((err) => {         
@@ -49,7 +48,7 @@ export class LoginPage {
   goodLogin(uid) {
     let userRef = this.afs.collection('users').ref.where('uid', '==', uid);
     var username = "";
-    var email = 
+    var email = "";
     
     userRef.get().then((result) => {
       result.forEach(doc => {

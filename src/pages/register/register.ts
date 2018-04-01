@@ -58,7 +58,8 @@ export class RegisterPage {
     users.doc(uid).set({ uid: uid,
                          name: name,
                          username: username,
-                         email: email
+                         email: email,
+                         numthanks: 0
     });
     
     this.navCtrl.push(TabsPage);

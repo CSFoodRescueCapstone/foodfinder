@@ -21,6 +21,7 @@ export class ProfilePage {
    numthanks$: Observable<number>;
    public uid: string;
    public email: string;
+   public numthanks: number;
 
   constructor(private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
     
@@ -29,22 +30,28 @@ export class ProfilePage {
   }
   
   ionViewWillEnter() {
-    this.updateData();
+    this.updateData(this.user);
   }
   
-  updateData() {
+  updateData(user: DBUser) {
     this.storage.get('uid').then((val) => {
       this.uid = val;
       
       let postRef = this.afs.collection('posts').ref.where('uid', '==', this.uid);
-      var numthanks = 0;
+      this.numthanks = 0;
       
       postRef.get().then((result) => {
         result.forEach(doc => {
           // this.numthanks$ += doc.data()['numthanks'];
-          numthanks += doc.data()['numthanks'];
+          this.numthanks += doc.data()['numthanks'];
         });
       });
+      
+      var user = {} as DBUser;
+      user.numthanks = this.numthanks;
+      var userPath = 'users/' + this.uid;
+      var userDoc = this.afs.doc<DBUser>(userPath);
+      userDoc.update(user);
       
       let userRef = this.afs.collection('users').ref.where('uid', '==', this.uid);
     
@@ -53,7 +60,7 @@ export class ProfilePage {
           this.name$ = doc.data()['name'];
           this.username$ = doc.data()['username'];
           // this.numthanks$ = numthanks.asObservable(); //cast to observable
-          doc.data()['numthanks'] = numthanks; //evenvernvlernvlerv
+          //doc.data()['numthanks'] = numthanks; //evenvernvlernvlerv
           this.numthanks$ = doc.data()['numthanks'];
           this.email = doc.data()['email'];
         });
@@ -67,7 +74,7 @@ export class ProfilePage {
   
   viewSettings() { // method for the viewOldPosts button
     this.navCtrl.push(SettingsPage, {
-      uid: this.uid, name: this.name$, username: this.username$, email: this.email
+      uid: this.uid, name: this.name$, username: this.username$, email: this.email, numthanks: this.numthanks
     });
   }
 }
