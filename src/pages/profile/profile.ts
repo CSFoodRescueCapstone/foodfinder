@@ -47,8 +47,6 @@ export class ProfilePage {
           // this.numthanks$ += doc.data()['numthanks'];
           this.numthanks += doc.data()['numthanks'];
         });
-        
-        this.toast.show(this.numthanks.toString(), 2000);
       
         var user = {} as DBUser;
         user.numthanks = this.numthanks;
