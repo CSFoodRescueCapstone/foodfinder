@@ -47,15 +47,15 @@ export class ProfilePage {
           // this.numthanks$ += doc.data()['numthanks'];
           this.numthanks += doc.data()['numthanks'];
         });
+        
+        this.toast.show(this.numthanks.toString(), 2000);
+      
+        var user = {} as DBUser;
+        user.numthanks = this.numthanks;
+        var userPath = 'users/' + this.uid;
+        var userDoc = this.afs.doc<DBUser>(userPath);
+        userDoc.update(user);
       });
-      
-      this.toast.show(this.numthanks.toString(), 2000);
-      
-      var user = {} as DBUser;
-      user.numthanks = this.numthanks;
-      var userPath = 'users/' + this.uid;
-      var userDoc = this.afs.doc<DBUser>(userPath);
-      userDoc.update(user);
       
       let userRef = this.afs.collection('users').ref.where('uid', '==', this.uid);
     
