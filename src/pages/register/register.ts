@@ -30,18 +30,18 @@ export class RegisterPage {
   
   async register(user: User) {
     if(user.confirmpassword == user.password) {
-        const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
-      
-        if(result) {
-          this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
-          .then((returnedUser) => {
-            this.goodLogin(returnedUser.uid, user.username, user.name, user.email);
-          })
-          .catch((err) => {         
-            console.log('Error', err);
-            this.badLogin();
-          })
-        } // end if (result)
+      const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+    
+      if(result) {
+        this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+        .then((returnedUser) => {
+          this.goodLogin(returnedUser.uid, user.username, user.name, user.email);
+        })
+        .catch((err) => {         
+          console.log('Error', err);
+          this.badLogin();
+        })
+      }
     }
     else {
        this.toast.show('Passwords do not match', 5000);
