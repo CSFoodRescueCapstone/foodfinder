@@ -45,10 +45,10 @@ export class SettingsPage {
   }
   
   editName(user: DBUser) {
-    user.username = this.username;
-    user.uid = this.uid;
-    user.numthanks = this.numthanks;
-    this.name = user.name;
+    // user.username = this.username;
+    // user.uid = this.uid;
+    // user.numthanks = this.numthanks;
+    // this.name = user.name;
       
     var userPath = 'users/' + this.uid;
     var userDoc = this.afs.doc<DBUser>(userPath);
@@ -58,10 +58,10 @@ export class SettingsPage {
   }
   
   editUsername(user: DBUser) {
-    user.name = this.name;
-    user.uid = this.uid;
-    user.numthanks = this.numthanks;
-    this.username = user.username;
+    // user.name = this.name;
+    // user.uid = this.uid;
+    // user.numthanks = this.numthanks;
+    // this.username = user.username;
       
     var userPath = 'users/' + this.uid;
     var userDoc = this.afs.doc<DBUser>(userPath);
