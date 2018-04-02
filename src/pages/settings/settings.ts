@@ -34,22 +34,13 @@ export class SettingsPage {
   numthanks: number;
 
   constructor(private toast: ToastService, private afs: AngularFirestore, private storage: Storage, private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-  
     this.uid = this.navParams.get('uid');
     this.name$ = this.navParams.get('name');
     this.username$ = this.navParams.get('username');
-    this.name = this.navParams.get('name');
-    this.username = this.navParams.get('username');
     this.email = this.navParams.get('email');
-    this.numthanks = this.navParams.get('numthanks');
   }
   
   editName(user: DBUser) {
-    // user.username = this.username;
-    // user.uid = this.uid;
-    // user.numthanks = this.numthanks;
-    // this.name = user.name;
-      
     var userPath = 'users/' + this.uid;
     var userDoc = this.afs.doc<DBUser>(userPath);
     userDoc.update(user);
@@ -58,11 +49,6 @@ export class SettingsPage {
   }
   
   editUsername(user: DBUser) {
-    // user.name = this.name;
-    // user.uid = this.uid;
-    // user.numthanks = this.numthanks;
-    // this.username = user.username;
-      
     var userPath = 'users/' + this.uid;
     var userDoc = this.afs.doc<DBUser>(userPath);
     userDoc.update(user);
@@ -105,7 +91,7 @@ export class SettingsPage {
   sendResetEmail() {
 
     this.afAuth.auth.sendPasswordResetEmail(this.email).then(function() {
-       this.printToast();
+       this.printEmailToast();
     }).catch(function(error) {
     });
     
@@ -140,7 +126,7 @@ export class SettingsPage {
     
   }
   
-  printToast() {
+  printEmailToast() {
     this.toast.show('An email has been sent.', 3000);
   }
 

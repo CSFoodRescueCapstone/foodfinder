@@ -44,7 +44,6 @@ export class ProfilePage {
       
       postRef.get().then((result) => {
         result.forEach(doc => {
-          // this.numthanks$ += doc.data()['numthanks'];
           this.numthanks += doc.data()['numthanks'];
         });
       
@@ -74,7 +73,7 @@ export class ProfilePage {
   
   viewSettings() { // method for the viewOldPosts button
     this.navCtrl.push(SettingsPage, {
-      uid: this.uid, name: this.name$, username: this.username$, email: this.email, numthanks: this.numthanks
+      uid: this.uid, name: this.name$, username: this.username$, email: this.email
     });
   }
 }
