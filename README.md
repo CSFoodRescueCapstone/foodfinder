@@ -7,6 +7,9 @@ This is a mobile application for finding free, leftover food on the campus of Co
 1. On a mobile device, download the Ionic View app from the App Store or Google Play Store.
 2. Navigate to the middle tab where there is a code entry box.
 3. Enter the code 94b20da7.
+4. Once the code is entered, the Food Finder app should appear under “All Apps.” Tap on the Food Finder app, and it will take you to the home page.
+5. From there, all implemented app functionality will work, and you can proceed as you wish.
+5. To exit the app, shake the device. This will bring up a control menu with the options to exit the app or cancel the action and stay in the app.
 
 ## Demo
 
